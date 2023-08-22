@@ -5,7 +5,7 @@ defineOptions({
 </script>
 
 <template>
-  <main>
-    <h1>Hello World</h1>
-  </main>
+  <div>
+    <h1 class="text-2xl">Hello World</h1>
+  </div>
 </template>
