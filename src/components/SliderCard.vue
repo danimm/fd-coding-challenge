@@ -3,7 +3,7 @@ defineOptions({ name: 'SliderCard' })
 </script>
 
 <template>
-  <div class="w-[620px] h-[900px] mt-[100px] bg-black">
+  <div class="w-[620px] h-[900px] mt-[100px] bg-black rounded-[5px]">
     <div class="pt-[19px] translate-y-[-100px]">
       <img
         class="h-[531px] w-[277px] mx-auto"
@@ -11,9 +11,7 @@ defineOptions({ name: 'SliderCard' })
         alt="Altiplano watch"
       />
       <div class="mt-[60px] text-center">
-        <h4
-          class="mb-[35px] tracking-widest text-secondary text-subheader font-trade-bold uppercase"
-        >
+        <h4 class="mb-[35px] tracking-widest text-secondary text-normal font-trade-bold uppercase">
           Piaget
         </h4>
         <h2 class="mb-[22px] tracking-wider text-white text-title font-minion text-5xl">

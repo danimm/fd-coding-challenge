@@ -13,8 +13,8 @@ module.exports = {
         'header-title': '80pt',
         'header-text': '26pt',
         title: '40pt',
-        subheader: '16pt',
-        normal: '15pt',
+        normal: '16pt',
+        'footer-text': '15pt',
         small: '12pt'
       },
       colors: {
