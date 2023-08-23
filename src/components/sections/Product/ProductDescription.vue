@@ -6,12 +6,10 @@ defineOptions({ name: 'ProductDescription' })
 
 <template>
   <div>
-    <div class="col-start-2">
-      <h3 class="font-trade-bold text-normal text-primary uppercase mb-[48px] pt-[44px]">
-        Specifications
-      </h3>
-      <h2 class="font-minion text-title">Product Characteristics</h2>
-    </div>
+    <h3 class="font-trade-bold text-normal text-primary uppercase mb-[48px] pt-[44px]">
+      Specifications
+    </h3>
+    <h2 class="font-minion text-title">Product Characteristics</h2>
 
     <div class="grid gap-[42px] grid-cols-7">
       <div class="col-span-3">
