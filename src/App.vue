@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import HomeView from '@/views/HomeView.vue'
+import MainLayout from '@/layouts/mainLayout.vue'
 </script>
 
 <template>
   <main>
-    <!--    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />-->
-    <HomeView />
+    <MainLayout>
+      <!-- In a much larger application this would be the place -->
+      <!-- where we would put our <RouterView /> -->
+      <HomeView />
+    </MainLayout>
   </main>
 </template>
