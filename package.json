@@ -10,7 +10,6 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --no-fix --ignore-path .gitignore",
-    "lint:check": "eslint \"{tests,src}/**/*.{js,ts,vue}\\ --no-fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "prepare": "husky install"
   },
@@ -46,7 +45,7 @@
   },
   "lint-staged": {
     "*.{vue,ts}": [
-      "pnpm run type-check && pnpm run lint:fix"
+      "pnpm run type-check && pnpm run lint"
     ]
   }
 }
