@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import NavIcon from '@/components/core/NavIcon.vue'
+import NavIcon from '@/components/core/navbar/NavIcon.vue'
 import contactIcon from '@/assets/images/icons/contact.png'
 import storesIcon from '@/assets/images/icons/stores.png'
 import languageIcon from '@/assets/images/icons/language.png'
@@ -72,7 +72,7 @@ const rightNavIcons: NavigationIcon[] = [
 </script>
 
 <template>
-  <div class="flex justify-between mt-[44px]">
+  <div class="flex justify-between my-[44px]">
     <div class="flex gap-[60px] items-center">
       <NavIcon
         v-for="({ src, alt, eventHandler }, index) in leftNavIcons"
