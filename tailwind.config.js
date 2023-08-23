@@ -31,7 +31,10 @@ module.exports = {
         '4xl': '2600px'
       },
       container: {
-        padding: '40px',
+        padding: {
+          DEFAULT: '40px',
+          '4xl': '500px'
+        },
         screens: {
           '2xl': '1800px',
           '3xl': '2200px',
