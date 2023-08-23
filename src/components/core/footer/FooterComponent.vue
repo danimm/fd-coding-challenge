@@ -3,7 +3,7 @@ defineOptions({ name: 'FooterComponent' })
 </script>
 
 <template>
-  <div class="grid grid-cols-12 gap-[42px] mb-[245px] mt-[225px]">
+  <div class="grid grid-cols-12 mb-[245px] mt-[225px]">
     <!-- Contact -->
     <div class="col-start-1 col-span-2">
       <picture>

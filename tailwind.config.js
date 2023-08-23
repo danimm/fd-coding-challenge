@@ -30,6 +30,7 @@ module.exports = {
         '3xl': '2200px',
         '4xl': '2600px'
       },
+      gap: '42px',
       container: {
         padding: {
           DEFAULT: '40px',
