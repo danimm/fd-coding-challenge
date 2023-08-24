@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<{ property: string; description: string }
 
 <template>
   <div
-    class="w-[100%] h-[125px] grid grid-cols-3 gap-[18px] border-b-[1px] border-b-secondary py-[35px]"
+    class="w-full h-[125px] grid grid-cols-3 gap-[18px] border-b-[1px] border-b-secondary py-[35px]"
   >
     <picture class="pl-[54px]">
       <img class="w-[70px] h-[70px]" src="../../../assets/images/icons/icon-1.png" alt="correa" />

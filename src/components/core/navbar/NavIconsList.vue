@@ -72,7 +72,7 @@ const rightNavIcons: NavigationIcon[] = [
 </script>
 
 <template>
-  <div class="flex justify-between my-[44px]">
+  <div class="container flex justify-between my-[44px]">
     <div class="flex gap-[60px] items-center">
       <NavIcon
         v-for="({ src, alt, eventHandler }, index) in leftNavIcons"

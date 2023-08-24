@@ -3,7 +3,7 @@ defineOptions({ name: 'FooterComponent' })
 </script>
 
 <template>
-  <div class="grid grid-cols-12 mb-[245px] mt-[225px]">
+  <div class="container grid grid-cols-12 mb-[245px] mt-[225px]">
     <!-- Contact -->
     <div class="col-start-1 col-span-2">
       <picture>
@@ -74,5 +74,7 @@ defineOptions({ name: 'FooterComponent' })
       <a href="#" class="block no-underline text-[15pt] text-secondary">Magazine Download</a>
     </div>
   </div>
-  <p class="font-trade text-[13pt] text-secondary mb-[73px]">© Copyright 2018 The Brand</p>
+  <div class="container">
+    <p class="font-trade text-[13pt] text-secondary mb-[73px]">© Copyright 2018 The Brand</p>
+  </div>
 </template>

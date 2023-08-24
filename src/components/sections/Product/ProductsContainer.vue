@@ -7,7 +7,7 @@ defineOptions({ name: 'ProductsContainer' })
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <ProductItem descriptionFirst>
       <template #left-position>
         <ProductDescription />

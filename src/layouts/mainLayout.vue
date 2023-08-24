@@ -7,7 +7,7 @@ defineOptions({ name: 'MainLayout' })
 </script>
 
 <template>
-  <div class="container lg:container 2xl:container 4xl:container">
+  <div>
     <NavIconsList />
     <NavBar />
     <slot />

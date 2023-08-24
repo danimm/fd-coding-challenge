@@ -22,6 +22,7 @@ module.exports = {
         secondary: '#CECECE',
         text: '#8C8C8C',
         'hero-bg': '#808080',
+        'hero-bg-light': '#EFEFEF',
         'border-bg': '#1D1D1D',
         'slider-bg': '#0F0F0F'
       },
@@ -32,9 +33,9 @@ module.exports = {
       },
       gap: '42px',
       container: {
+        center: true,
         padding: {
-          DEFAULT: '40px',
-          '4xl': '500px'
+          DEFAULT: '40px'
         },
         screens: {
           '2xl': '1800px',

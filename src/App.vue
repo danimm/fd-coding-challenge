@@ -5,10 +5,12 @@ import MainLayout from '@/layouts/mainLayout.vue'
 
 <template>
   <main>
-    <MainLayout>
-      <!-- In a much larger application this would be the place -->
-      <!-- where we would put our <RouterView /> -->
-      <HomeView />
-    </MainLayout>
+    <body>
+      <MainLayout>
+        <!-- In a much larger application this would be the place -->
+        <!-- where we would put our <RouterView /> -->
+        <HomeView />
+      </MainLayout>
+    </body>
   </main>
 </template>
