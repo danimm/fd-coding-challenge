@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { type ProductCharacteristic } from '@/types/ProductCharacteristic'
+import type { ProductDetail } from '@/types/Products'
 
 defineOptions({ name: 'ProductCharacteristics' })
-defineProps<ProductCharacteristic>()
+defineProps<Omit<ProductDetail, 'iconTarget' | 'sortOrder'>>()
 
 /*
 INFO: This is a new feature by Vue 3.3 🪄
@@ -39,8 +39,8 @@ const props = withDefaults(defineProps<{ property: string; description: string }
       <img class="w-[70px] h-[70px]" src="../../../assets/images/icons/icon-1.png" alt="correa" />
     </picture>
     <div class="col-span-2 flex flex-col justify-between">
-      <p class="font-minion text-normal text-secondary">{{ property }}</p>
-      <h4 class="font-trade-bold text-normal uppercase">{{ description }}</h4>
+      <p class="font-minion text-normal text-secondary">{{ title }}</p>
+      <h4 class="font-trade-bold text-normal uppercase">{{ text }}</h4>
     </div>
   </div>
 </template>

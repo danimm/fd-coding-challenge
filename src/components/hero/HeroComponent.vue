@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import ButtonComponent from '@/components/core/ButtonComponent.vue'
+import { getImageUrl } from '@/composables/getImageUrl'
 
 defineOptions({ name: 'HeroComponent' })
 
@@ -26,7 +27,7 @@ const selectedIdx = 0
 
           <picture>
             <img
-              src="@/assets/images/ultimate.png"
+              :src="getImageUrl('ultimate.png')"
               alt="Product image"
               class="h-[1776px] max-w-[880px] w-full object-cover"
             />
