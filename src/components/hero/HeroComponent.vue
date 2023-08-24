@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import ButtonComponent from '@/components/core/ButtonComponent.vue'
+
 defineOptions({ name: 'HeroComponent' })
 
 const selectedIdx = 0
@@ -50,13 +52,7 @@ const selectedIdx = 0
               The thinnest hand-wound mechanical watches in the world. Manufacture Piaget 910P
               ultra-thin, hand-wound mechanical movement.
             </p>
-            <a href="#">
-              <button
-                class="w-full max-w-[480px] max-h-[125px] p-[47px] tracking-wider uppercase font-bold text-normal bg-primary text-white rounded-[5px]"
-              >
-                Add to shopping bag
-              </button>
-            </a>
+            <ButtonComponent> Add to shopping bag </ButtonComponent>
           </div>
         </div>
       </div>
