@@ -7,7 +7,7 @@ defineOptions({ name: 'SliderCard' })
     <div class="pt-[19px] translate-y-[-100px]">
       <img
         class="h-[531px] w-[277px] mx-auto"
-        src="@/assets/images/img01.png"
+        src="../../../assets/images/img01.png"
         alt="Altiplano watch"
       />
       <div class="mt-[60px] text-center">

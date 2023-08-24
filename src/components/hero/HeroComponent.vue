@@ -7,7 +7,7 @@ const selectedIdx = 0
 </script>
 
 <template>
-  <div class="h-[1970px] pt-[120px] pb-[140px] bg-hero-bg-light mx-[40px]">
+  <div class="h-[1970px] pt-[120px] pb-[140px] bg-hero-bg-light">
     <div class="container grid grid-cols-12 gap-[42px]">
       <div class="col-span-6">
         <div class="flex justify-between">
