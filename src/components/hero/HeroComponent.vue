@@ -6,7 +6,7 @@ const selectedIdx = 0
 
 <template>
   <div class="h-[1970px] pt-[120px] pb-[140px] bg-hero-bg-light mx-[40px]">
-    <div class="container grid grid-cols-12 gap-[50px]">
+    <div class="container grid grid-cols-12 gap-[42px]">
       <div class="col-span-6">
         <div class="flex justify-between">
           <div class="flex flex-col justify-center items-start">
@@ -22,19 +22,17 @@ const selectedIdx = 0
             </div>
           </div>
 
-          <div class="">
-            <picture>
-              <img
-                src="@/assets/images/ultimate.png"
-                alt="Product image"
-                class="h-[1776px] max-w-[880px] w-full object-cover"
-              />
-            </picture>
-          </div>
+          <picture>
+            <img
+              src="@/assets/images/ultimate.png"
+              alt="Product image"
+              class="h-[1776px] max-w-[880px] w-full object-cover"
+            />
+          </picture>
         </div>
       </div>
 
-      <div class="col-span-6 py-[212px]">
+      <div class="col-start-8 col-span-5 py-[212px]">
         <div class="grid grid-cols-6">
           <div class="col-span-5">
             <h3 class="font-trade-bold text-normal text-primary pb-[78px] uppercase">
