@@ -37,6 +37,18 @@ export interface Product {
   relatedProducts: string[]
 }
 
+export interface PopulatedProduct {
+  category: Product['category']
+  subTitle: Product['subTitle']
+  sku: Product['sku']
+  mainImage: string
+  priceFormatted: string
+}
+
 export interface PricedProduct extends Product {
   price: Price
+}
+
+export interface PopulatedPricedProduct extends Omit<PricedProduct, 'relatedProducts'> {
+  relatedProducts: PopulatedProduct[]
 }

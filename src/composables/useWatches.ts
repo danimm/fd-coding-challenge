@@ -4,8 +4,19 @@ import { useWatchesStore } from '@/stores/watches'
 import { WatchesService } from '@/services/watches.service'
 import { PricesService } from '@/services/prices.service'
 
-import type { PricedProduct, Product } from '@/types/Products'
+import type {
+  PopulatedPricedProduct,
+  PopulatedProduct,
+  PricedProduct,
+  Product
+} from '@/types/Products'
 import type { Price } from '@/types/Price'
+
+type FindBySkuPayload = {
+  sku: string
+  populateRelated?: boolean
+  updateStore?: boolean
+}
 
 export function useWatches() {
   const watchesStore = useWatchesStore()
@@ -29,7 +40,29 @@ export function useWatches() {
     watchesStore.setSelectedWatch(watch)
   }
 
-  async function findBySku(sku: string): Promise<void> {
+  function getPopulatedRelateWatches(relatedSku: string[]): PopulatedProduct[] {
+    const populatedPrices: Record<string, string> = {}
+    watchesStore.prices
+      .filter(({ sku }) => relatedSku.includes(sku))
+      .forEach(({ sku, priceFormatted }) => {
+        populatedPrices[sku] = priceFormatted
+      })
+
+    return watchesStore.watches
+      .filter(({ sku }) => relatedSku.includes(sku))
+      .map(({ category, subTitle, sku, medias }) => ({
+        category,
+        subTitle,
+        sku,
+        mainImage: medias[1].path,
+        priceFormatted: populatedPrices[sku]
+      }))
+  }
+
+  async function findBySku({
+    sku,
+    updateStore = false
+  }: FindBySkuPayload): Promise<PopulatedPricedProduct> {
     if (watchesStore.watches.length === 0 || watchesStore.prices) await fetchAllWatchesWithPrices()
 
     const selectedWatch = watchesStore.watches.find((watch: Product) => watch.sku === sku)
@@ -37,7 +70,13 @@ export function useWatches() {
 
     if (!selectedWatch || !selectedPrice) return Promise.reject('Product not found')
 
-    setSelectedWatch({ ...selectedWatch, price: selectedPrice })
+    if (updateStore) setSelectedWatch({ ...selectedWatch, price: selectedPrice })
+
+    return {
+      ...selectedWatch,
+      price: selectedPrice,
+      relatedProducts: getPopulatedRelateWatches(selectedWatch.relatedProducts)
+    } as PopulatedPricedProduct
   }
 
   function reset() {
@@ -47,6 +86,7 @@ export function useWatches() {
   return {
     ...storeToRefs(watchesStore),
     fetchAllWatchesWithPrices,
+    getPopulatedRelateWatches,
     findBySku,
     reset
   }
