@@ -17,17 +17,20 @@ const props = defineProps<{ id: string }>()
 const { findBySku } = useWatches()
 
 const selectedWatch = ref<PopulatedPricedProduct | null>(null)
+const heroImage = ref({ index: 0, image: '' })
+
 const watchDetailImages = computed(() => {
   const gallery: string[] = []
   const details = {
+    mainImage: '',
     firstDetail: '',
     secondDetail: ''
   }
 
   selectedWatch.value?.medias.forEach(({ targetAttr, path }) => {
     if (targetAttr === 'gallery') gallery.push(path)
-    if (targetAttr === 'detail-1') details.firstDetail = path
-    if (targetAttr === 'detail-2') details.secondDetail = path
+    else if (targetAttr === 'detail-1') details.firstDetail = path
+    else if (targetAttr === 'detail-2') details.secondDetail = path
   })
 
   return {
@@ -36,14 +39,33 @@ const watchDetailImages = computed(() => {
   }
 })
 
+function updateMainImage(payload: { index: number; image: string }) {
+  heroImage.value = { ...payload }
+}
+
 onMounted(async () => {
   selectedWatch.value = await findBySku({ sku: props.id })
+  const newHeroImage = selectedWatch.value?.medias.find(
+    ({ targetAttr }) => targetAttr === 'mainImage'
+  )
+
+  if (newHeroImage) heroImage.value.image = newHeroImage.path
 })
 </script>
 
 <template>
   <div class="mx-[40px]" v-if="selectedWatch">
-    <HeroComponent />
+    <HeroComponent
+      :title="selectedWatch.title"
+      :category="selectedWatch.category"
+      :price-formatted="selectedWatch.price.priceFormatted"
+      :short-description="selectedWatch.shortDescription"
+      :sku="selectedWatch.sku"
+      :gallery="watchDetailImages.gallery"
+      :selected-gallery-image-index="heroImage.index"
+      :main-image="heroImage.image"
+      @update-selected-image="updateMainImage"
+    />
     <div class="container">
       <ProductDetailContainer descriptionFirst>
         <template #left-position>
