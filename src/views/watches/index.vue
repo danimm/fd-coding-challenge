@@ -38,13 +38,7 @@ onMounted(async () => {
       <WatchSliderCardSkeleton v-for="(_, idx) in 30" :key="idx" />
     </template>
     <template v-else>
-      <RouterLink
-        v-for="watch in watchesList"
-        :to="{ name: 'Watch', params: { id: watch.sku } }"
-        :key="watch.sku"
-      >
-        <SliderCard v-bind="watch" :key="watch.sku" />
-      </RouterLink>
+      <SliderCard v-bind="watch" v-for="watch in watchesList" :key="watch.sku" />
     </template>
   </div>
 </template>

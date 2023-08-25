@@ -43,6 +43,10 @@ function updateMainImage(payload: { index: number; image: string }) {
   heroImage.value = { ...payload }
 }
 
+function goToTop() {
+  window.scrollTo(0, 0)
+}
+
 onMounted(async () => {
   selectedWatch.value = await findBySku(props.id)
   const newHeroImage = selectedWatch.value?.medias.find(
@@ -105,6 +109,7 @@ onMounted(async () => {
     >
       <template #slider-card>
         <SliderCard
+          @click="goToTop"
           class="mr-[40px]"
           v-for="watch in selectedWatch.relatedProducts"
           :key="watch.sku"
