@@ -19,6 +19,12 @@ export const useWatchesStore = defineStore('counter', {
     status: 'ok'
   }),
   actions: {
+    setWatches(watches: Product[]) {
+      this.watches = watches
+    },
+    setPrices(prices: Price[]) {
+      this.prices = prices
+    },
     setSelectedWatch(watch: PricedProduct | null) {
       this.selectedWatch = watch
     },

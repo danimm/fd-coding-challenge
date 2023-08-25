@@ -11,10 +11,18 @@ export function useWatches() {
   const watchesStore = useWatchesStore()
 
   async function fetchAllWatchesWithPrices() {
-    const response = await Promise.allSettled([WatchesService.getProducts, PricesService.getPrices])
+    const response = await Promise.allSettled([
+      WatchesService.getProducts(),
+      PricesService.getPrices()
+    ])
     if (response.some(({ status }) => status === 'rejected')) {
       watchesStore.$reset()
+      return
     }
+
+    const [watches, prices] = response
+    watchesStore.setWatches((watches as PromiseFulfilledResult<Product[]>).value)
+    watchesStore.setPrices((prices as PromiseFulfilledResult<Price[]>).value)
   }
 
   function setSelectedWatch(watch: PricedProduct) {

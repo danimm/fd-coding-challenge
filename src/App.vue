@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import HomeView from '@/views/HomeView.vue'
+import HomeView from '@/views/index.vue'
 import MainLayout from '@/layouts/mainLayout.vue'
 </script>
 
 <template>
   <main>
-    <body>
-      <MainLayout>
-        <!-- In a much larger application this would be the place -->
-        <!-- where we would put our <RouterView /> -->
-        <HomeView />
-      </MainLayout>
-    </body>
+    <MainLayout>
+      <!-- In a much larger application this would be the place -->
+      <!-- where we would put our <RouterView /> -->
+      <RouterView />
+    </MainLayout>
   </main>
 </template>
