@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch, watchEffect } from 'vue'
 import { useWatches } from '@/composables/useWatches'
+import { useRoute, useRouter } from 'vue-router'
 import type { PopulatedPricedProduct } from '@/types/Products'
 
 import HeroComponent from '@/components/hero/HeroComponent.vue'
@@ -12,7 +13,8 @@ import ProductImage from '@/components/sections/Watches/ProductImage.vue'
 
 defineOptions({ name: 'WatchView' })
 
-const props = defineProps<{ id: string }>()
+const route = useRoute()
+const router = useRouter()
 
 const { findBySku } = useWatches()
 
@@ -47,18 +49,28 @@ function goToTop() {
   window.scrollTo(0, 0)
 }
 
-onMounted(async () => {
-  selectedWatch.value = await findBySku(props.id)
-  const newHeroImage = selectedWatch.value?.medias.find(
-    ({ targetAttr }) => targetAttr === 'mainImage'
-  )
+watch(
+  () => route.params.id,
+  async () => {
+    try {
+      selectedWatch.value = await findBySku(String(route.params.id))
+      const newHeroImage = selectedWatch.value?.medias.find(
+        ({ targetAttr }) => targetAttr === 'mainImage'
+      )
 
-  if (newHeroImage) heroImage.value.image = newHeroImage.path
-})
+      if (newHeroImage) heroImage.value.image = newHeroImage.path
+    } catch (e) {
+      await router.push({ name: 'Watches' })
+    }
+  },
+  {
+    immediate: true
+  }
+)
 </script>
 
 <template>
-  <div class="mx-[40px]" v-if="selectedWatch">
+  <div class="mx-[40px]" v-if="selectedWatch" :key="selectedWatch.id">
     <HeroComponent
       :title="selectedWatch.title"
       :category="selectedWatch.category"

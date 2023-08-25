@@ -24,6 +24,8 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
+      children: [],
+      redirect: '/watches',
       component: () => import('@/views/404.vue')
     }
   ]
