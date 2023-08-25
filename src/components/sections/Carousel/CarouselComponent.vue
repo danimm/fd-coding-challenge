@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import SliderCard from '@/components/sections/Carousel/SliderCard.vue'
-
 defineOptions({ name: 'CarouselComponent' })
 defineProps<{
   subTitle: string
+  carouselLength: number
 }>()
 </script>
 
@@ -29,7 +28,7 @@ defineProps<{
         </div>
 
         <div class="font-minion text-[20pt] text-secondary pl-[82px]">
-          <span class="text-white">3</span> <span>/ 9</span>
+          <span class="text-white">3</span> <span>/ {{ carouselLength }}</span>
         </div>
       </div>
 

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { getImageUrl } from '@/composables/getImageUrl'
 
 defineOptions({ name: 'ProductImage' })
 
 const props = defineProps({
+  image: { type: String, required: true },
   imageOverflow: { type: Boolean, default: false },
   zoom: { type: Boolean, default: false },
   centered: { type: Boolean, default: false }
@@ -23,7 +25,7 @@ const imageDynamicStyles = computed(() => ({
     <picture>
       <img
         :class="imageDynamicStyles"
-        src="@/assets/images/img01.png"
+        :src="getImageUrl(image)"
         alt="Piaget watch"
         class="bg-slider-bg h-[100%]"
       />

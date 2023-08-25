@@ -68,7 +68,7 @@ export function useWatches() {
     const selectedWatch = watchesStore.watches.find((watch: Product) => watch.sku === sku)
     const selectedPrice = watchesStore.prices.find((price: Price) => price.sku === sku)
 
-    if (!selectedWatch || !selectedPrice) return Promise.reject('Product not found')
+    if (!selectedWatch || !selectedPrice) return Promise.reject('Watches not found')
 
     if (updateStore) setSelectedWatch({ ...selectedWatch, price: selectedPrice })
 
@@ -76,7 +76,7 @@ export function useWatches() {
       ...selectedWatch,
       price: selectedPrice,
       relatedProducts: getPopulatedRelateWatches(selectedWatch.relatedProducts)
-    } as PopulatedPricedProduct
+    }
   }
 
   function reset() {
