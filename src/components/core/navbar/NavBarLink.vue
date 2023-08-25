@@ -11,7 +11,7 @@ defineEmits<{ onClick: [] }>()
 <template>
   <a
     :href="to"
-    class="transition-all no-underline text-black uppercase font-minion font-bold tracking-widest text-normal"
+    class="transition-transform no-underline text-black uppercase font-minion font-bold tracking-widest text-normal"
     :class="{
       'hover:scale-110 hover:text-primary ': !activeRoute
     }"

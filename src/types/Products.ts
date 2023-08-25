@@ -1,3 +1,5 @@
+import type { Price } from '@/types/Price'
+
 export interface Media {
   targetAttr: string
   path: string
@@ -33,4 +35,8 @@ export interface Product {
   productDetails: ProductDetails
   productSpecifications: ProductSpecifications
   relatedProducts: string[]
+}
+
+export interface PricedProduct extends Product {
+  price: Price
 }
