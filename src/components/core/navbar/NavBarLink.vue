@@ -5,22 +5,20 @@ withDefaults(defineProps<{ to?: string; activeRoute: boolean }>(), {
   to: '#',
   activeRoute: false
 })
-defineEmits<{ onClick: [] }>()
 </script>
 
 <template>
-  <a
-    :href="to"
+  <RouterLink
+    :to="to"
     class="transition-transform no-underline text-black uppercase font-minion font-bold tracking-widest text-normal"
     :class="{
       'hover:scale-110 hover:text-primary ': !activeRoute
     }"
-    @click.prevent="$emit('onClick')"
   >
     <span class="relative" :class="{ 'active-route': activeRoute }">
       <slot />
     </span>
-  </a>
+  </RouterLink>
 </template>
 
 <style scoped>

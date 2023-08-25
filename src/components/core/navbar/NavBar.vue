@@ -8,7 +8,7 @@ defineOptions({ name: 'NavBar' })
   <div class="container grid grid-cols-12 gap-[42px] items-end mb-[75px] mt-[55px]">
     <!-- Left Items -->
     <div class="grid grid-cols-3 text-start col-span-4">
-      <NavBarLink active-route> Watches </NavBarLink>
+      <NavBarLink active-route to="/watches"> Watches </NavBarLink>
       <NavBarLink> Jewellery </NavBarLink>
       <NavBarLink> Wedding </NavBarLink>
     </div>
