@@ -44,7 +44,7 @@ function updateMainImage(payload: { index: number; image: string }) {
 }
 
 onMounted(async () => {
-  selectedWatch.value = await findBySku({ sku: props.id })
+  selectedWatch.value = await findBySku(props.id)
   const newHeroImage = selectedWatch.value?.medias.find(
     ({ targetAttr }) => targetAttr === 'mainImage'
   )

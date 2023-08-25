@@ -25,9 +25,6 @@ export const useWatchesStore = defineStore('counter', {
     setPrices(prices: Price[]) {
       this.prices = prices
     },
-    setSelectedWatch(watch: PricedProduct | null) {
-      this.selectedWatch = watch
-    },
     setStoreStatus(newStatus: WatchesStoreStatus) {
       this.status = newStatus
     }

@@ -24,9 +24,10 @@ onMounted(async () => {
   } catch (e) {
     // Error handling
   } finally {
+    // Simulate API call
     setTimeout(() => {
       isLoading.value = false
-    }, 1000)
+    }, 500)
   }
 })
 </script>

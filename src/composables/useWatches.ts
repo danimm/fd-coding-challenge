@@ -4,19 +4,8 @@ import { useWatchesStore } from '@/stores/watches'
 import { WatchesService } from '@/services/watches.service'
 import { PricesService } from '@/services/prices.service'
 
-import type {
-  PopulatedPricedProduct,
-  PopulatedProduct,
-  PricedProduct,
-  Product
-} from '@/types/Products'
+import type { PopulatedPricedProduct, PopulatedProduct, Product } from '@/types/Products'
 import type { Price } from '@/types/Price'
-
-type FindBySkuPayload = {
-  sku: string
-  populateRelated?: boolean
-  updateStore?: boolean
-}
 
 export function useWatches() {
   const watchesStore = useWatchesStore()
@@ -34,10 +23,6 @@ export function useWatches() {
     const [watches, prices] = response
     watchesStore.setWatches((watches as PromiseFulfilledResult<Product[]>).value)
     watchesStore.setPrices((prices as PromiseFulfilledResult<Price[]>).value)
-  }
-
-  function setSelectedWatch(watch: PricedProduct) {
-    watchesStore.setSelectedWatch(watch)
   }
 
   function getPopulatedRelateWatches(relatedSku: string[]): PopulatedProduct[] {
@@ -59,18 +44,13 @@ export function useWatches() {
       }))
   }
 
-  async function findBySku({
-    sku,
-    updateStore = false
-  }: FindBySkuPayload): Promise<PopulatedPricedProduct> {
+  async function findBySku(sku: string): Promise<PopulatedPricedProduct> {
     if (watchesStore.watches.length === 0 || watchesStore.prices) await fetchAllWatchesWithPrices()
 
     const selectedWatch = watchesStore.watches.find((watch: Product) => watch.sku === sku)
     const selectedPrice = watchesStore.prices.find((price: Price) => price.sku === sku)
 
     if (!selectedWatch || !selectedPrice) return Promise.reject('Watches not found')
-
-    if (updateStore) setSelectedWatch({ ...selectedWatch, price: selectedPrice })
 
     return {
       ...selectedWatch,
