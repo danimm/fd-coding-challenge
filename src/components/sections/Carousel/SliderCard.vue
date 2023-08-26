@@ -12,7 +12,7 @@ defineProps<{
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'Watch', params: { id: sku } }" :key="sku">
+  <RouterLink :to="{ name: 'Watch', params: { id: sku } }" :key="sku" class="snap-center">
     <div class="w-[620px] h-[900px] mt-[100px] bg-black rounded-[5px] cursor-pointer">
       <div class="pt-[19px] translate-y-[-100px]">
         <img class="h-[531px] w-[277px] mx-auto" :src="getImageUrl(mainImage)" :alt="subTitle" />
