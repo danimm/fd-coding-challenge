@@ -27,7 +27,7 @@ const imageDynamicStyles = computed(() => ({
         :class="imageDynamicStyles"
         :src="getImageUrl(image)"
         alt="Piaget watch"
-        class="bg-slider-bg h-[100%]"
+        class="bg-slider-bg h-[100%] object-cover"
       />
     </picture>
   </div>

@@ -12,7 +12,7 @@ defineProps<ProductDetail>()
   >
     <picture class="pl-[54px]">
       <img
-        class="w-[70px] h-[70px]"
+        class="w-[70px] h-[70px] object-cover"
         :src="getImageUrl(`icons/${iconTarget}.png`)"
         :alt="iconTarget"
       />
