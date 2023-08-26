@@ -9,7 +9,7 @@ module.exports = {
       minion: ['Minion Pro Regular']
     },
     screens: {
-      sm: '640px',
+      sm: '690px',
       md: '768px',
       lg: '1024px',
       xl: '1256px',

@@ -64,7 +64,7 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
             :key="watch.sku"
             v-bind="watch"
             @click="goToTop"
-            class="mr-[40px]"
+            class="mr-[40px] w-[600px] mt-[100px] bg-black"
           />
         </div>
       </div>

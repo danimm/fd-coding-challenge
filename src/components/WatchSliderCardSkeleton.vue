@@ -3,7 +3,10 @@ defineOptions({ name: 'WatchSliderCardSkeleton' })
 </script>
 
 <template>
-  <div role="status" class="w-[620px] h-[900px] mt-[100px] bg-black rounded-[5px]">
+  <div
+    role="status"
+    class="w-full mx-auto lg:w-[620px] h-[900px] mt-[100px] bg-black rounded-[5px]"
+  >
     <div
       role="status"
       class="w-full h-full p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
