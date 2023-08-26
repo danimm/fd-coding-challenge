@@ -1,9 +1,29 @@
 <script lang="ts" setup>
+import { computed, ref } from 'vue'
+import { vIntersectionObserver } from '@vueuse/components'
+import type { PopulatedProduct } from '@/types/Products'
+
+import SliderCard from '@/components/sections/Carousel/SliderCard.vue'
+
 defineOptions({ name: 'CarouselComponent' })
-defineProps<{
-  subTitle: string
-  carouselLength: number
-}>()
+defineProps<{ subTitle: string; relatedProducts: PopulatedProduct[] }>()
+
+function goToTop() {
+  window.scrollTo(0, 0)
+}
+
+const container = ref<HTMLElement | null>(null)
+const cards = computed(() => {
+  if (!container.value) return [] as Element[]
+  return Array.from(container.value.children)
+})
+const lastIndexVisible = ref(2)
+
+function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObserverEntry]) {
+  if (isIntersecting) {
+    lastIndexVisible.value = cards.value.findIndex((element) => element.isSameNode(target)) || 0
+  }
+}
 </script>
 
 <template>
@@ -21,20 +41,31 @@ defineProps<{
           class="border-2 w-[220px] h-[220px] border-[#1e1e1e] rounded-[50%] flex flex-col justify-center items-center mb-[100px]"
         >
           <picture>
-            <img src="@/assets/images/icons/arrow.png" alt="Arrow icon" class="pb-[35px]" />
+            <img src="@/assets/images/icons/arrow.png" alt="Arrow left" class="pb-[35px]" />
           </picture>
 
           <h3 class="uppercase text-[14pt] tracking-widest text-white font-trade-bold">Drag</h3>
         </div>
 
         <div class="font-minion text-[20pt] text-secondary pl-[82px]">
-          <span class="text-white">3</span> <span>/ {{ carouselLength }}</span>
+          <span class="text-white">{{ lastIndexVisible + 1 }}</span>
+          <span>/ {{ relatedProducts.length }}</span>
         </div>
       </div>
 
-      <div class="col-span-9 flex items-end overflow-x-scroll">
-        <div class="flex max-w-100%">
-          <slot name="slider-card" />
+      <div class="col-span-9 gap-0 flex items-end">
+        <div ref="container" class="flex w-full overflow-x-scroll snap-x snap-mandatory">
+          <SliderCard
+            v-intersection-observer="[
+              onIntersectionObserver as unknown as IntersectionObserverCallback,
+              { root: container, threshold: 1 }
+            ]"
+            v-for="watch in relatedProducts"
+            :key="watch.sku"
+            v-bind="watch"
+            @click="goToTop"
+            class="mr-[40px]"
+          />
         </div>
       </div>
     </div>
