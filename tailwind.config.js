@@ -8,6 +8,15 @@ module.exports = {
       'trade-bold': ['Trade Gothic LT Bold'],
       minion: ['Minion Pro Regular']
     },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1256px',
+      '2xl': '1536px',
+      '3xl': '2200px',
+      '4xl': '2600px'
+    },
     extend: {
       fontSize: {
         'header-title': '80pt',
@@ -26,22 +35,20 @@ module.exports = {
         'border-bg': '#1D1D1D',
         'slider-bg': '#0F0F0F'
       },
-      screens: {
-        '2xl': '1800px',
-        '3xl': '2200px',
-        '4xl': '2600px'
-      },
       gap: '42px',
       container: {
         center: true,
         padding: {
-          DEFAULT: '40px'
-        },
-        screens: {
-          '2xl': '1800px',
-          '3xl': '2200px',
-          '4xl': '2600px'
+          DEFAULT: '40px',
+          sm: '0',
+          lg: '20px'
         }
+        // screens: {
+        // '1xl': '1456px',
+        // '2xl': '1536px',
+        // '3xl': '2200px',
+        // '4xl': '2600px'
+        // }
       }
     }
   },
