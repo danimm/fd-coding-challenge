@@ -33,7 +33,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="p-[40px] mx-[40px] bg-slider-bg watches-container min-h[80vh]">
+  <div class="p-[40px] container bg-slider-bg watches-container min-h[80vh]">
     <template v-if="isLoading">
       <WatchSliderCardSkeleton v-for="(_, idx) in 30" :key="idx" />
     </template>

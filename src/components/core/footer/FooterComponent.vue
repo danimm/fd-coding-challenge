@@ -3,9 +3,9 @@ defineOptions({ name: 'FooterComponent' })
 </script>
 
 <template>
-  <div class="container grid grid-cols-12 mb-[245px] mt-[225px]">
+  <div class="container grid grid-cols-12 my-[50px] lg:mb-[245px] lg:mt-[225px]">
     <!-- Contact -->
-    <div class="col-start-1 col-span-2">
+    <div class="col-span-12 md:col-span-4 2xl:col-span-2 pb-8 md:pb-0">
       <picture>
         <img
           src="@/assets/images/logos/logo.png"
@@ -13,12 +13,13 @@ defineOptions({ name: 'FooterComponent' })
           class="object-contain w-[306px] h-[33px] mb-[45px]"
         />
       </picture>
+
       <p class="font-trade text-[15pt] mb-[25px]">Walchestrasse 9</p>
       <p class="font-trade text-[15pt] mb-[75px]">8006 Zürich</p>
 
       <div>
-        <div class="flex justify-between">
-          <p class="uppercase font-trade-bold text-[15pt]">T</p>
+        <div class="md:flex md:justify-between">
+          <p class="inline pr-8 md:pr-0 md:block uppercase font-trade-bold text-[15pt]">T</p>
           <a href="tel:+41010203040" class="font-trade text-[15pt] text-black no-underline">
             + 41 (0) 10 20 30 40
           </a>
@@ -26,8 +27,8 @@ defineOptions({ name: 'FooterComponent' })
       </div>
 
       <div>
-        <div class="flex justify-between">
-          <p class="uppercase font-trade-bold text-[15pt]">F</p>
+        <div class="md:flex md:justify-between">
+          <p class="inline pr-8 md:pr-0 md:block uppercase font-trade-bold text-[15pt]">F</p>
           <a href="tel:+41010203040" class="font-trade text-[15pt] text-black no-underline">
             + 41 (0) 50 60 70 80
           </a>
@@ -35,8 +36,8 @@ defineOptions({ name: 'FooterComponent' })
       </div>
 
       <div>
-        <div class="flex justify-between">
-          <p class="uppercase font-trade-bold text-[15pt]">M</p>
+        <div class="md:flex md:justify-between">
+          <p class="inline pr-8 md:pr-0 md:block uppercase font-trade-bold text-[15pt]">M</p>
           <a
             href="mailto:contact@thebrand.com"
             class="font-trade text-[15pt] text-primary no-underline"
@@ -48,7 +49,9 @@ defineOptions({ name: 'FooterComponent' })
     </div>
 
     <!-- Customer Care -->
-    <div class="col-start-4 col-span-2 flex flex-col items-center">
+    <div
+      class="col-span-6 md:col-span-4 2xl:col-start-4 2xl:col-span-2 flex flex-col items-start md:items-center"
+    >
       <div class="text-left">
         <h4 class="uppercase font-trade-bold font-normal mb-[45px]">Customer care</h4>
 
@@ -65,7 +68,7 @@ defineOptions({ name: 'FooterComponent' })
     </div>
 
     <!-- Stay in touch -->
-    <div class="col-start-7 col-span-2">
+    <div class="col-span-6 md:col-span-4 2xl:col-start-7 2xl:col-span-2">
       <h4 class="uppercase font-trade-bold font-normal mb-[44px]">Customer care</h4>
 
       <a href="#" class="block no-underline text-[15pt] text-secondary"
