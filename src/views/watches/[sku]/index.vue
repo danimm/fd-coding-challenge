@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref, watch, watchEffect } from 'vue'
-import { useWatches } from '@/composables/useWatches'
+import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useWatches } from '@/composables/useWatches'
 import type { PopulatedPricedProduct } from '@/types/Products'
 
 import HeroComponent from '@/components/hero/HeroComponent.vue'
 import CarouselComponent from '@/components/sections/Carousel/CarouselComponent.vue'
-import SliderCard from '@/components/sections/Carousel/SliderCard.vue'
 import ProductDescription from '@/components/sections/Watches/ProductDescription.vue'
 import ProductDetailContainer from '@/components/sections/Watches/ProductDetailContainer.vue'
 import ProductImage from '@/components/sections/Watches/ProductImage.vue'
@@ -35,18 +34,11 @@ const watchDetailImages = computed(() => {
     else if (targetAttr === 'detail-2') details.secondDetail = path
   })
 
-  return {
-    gallery,
-    details
-  }
+  return { gallery, details }
 })
 
 function updateMainImage(payload: { index: number; image: string }) {
   heroImage.value = { ...payload }
-}
-
-function goToTop() {
-  window.scrollTo(0, 0)
 }
 
 watch(
