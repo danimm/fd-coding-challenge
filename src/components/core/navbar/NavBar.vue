@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import NavBarLink from '@/components/core/navbar/NavBarLink.vue'
+import NavBarMobile from '@/components/core/navbar/NavBarMobile.vue'
 
 defineOptions({ name: 'NavBar' })
 </script>
 
 <template>
-  <div class="container grid grid-cols-12 gap-[42px] items-end mb-[75px] mt-[55px]">
+  <nav class="container grid grid-cols-12 gap-[42px] items-end mb-[75px] mt-[55px]">
     <!-- Left Items -->
     <div class="grid grid-cols-3 text-start col-span-4">
       <NavBarLink active-route to="/watches"> Watches </NavBarLink>
@@ -32,23 +33,7 @@ defineOptions({ name: 'NavBar' })
       <NavBarLink> Company </NavBarLink>
       <NavBarLink> Stores </NavBarLink>
     </div>
-  </div>
+  </nav>
+
+  <NavBarMobile />
 </template>
-
-<style scoped>
-.active-route {
-  position: relative;
-  @apply text-primary font-trade-bold;
-}
-
-.active-route::before {
-  content: '';
-  position: absolute;
-  background-color: pink;
-  width: 100%;
-  height: 3px;
-  bottom: -10px;
-  left: 0;
-  @apply bg-primary text-primary;
-}
-</style>
