@@ -62,7 +62,7 @@ watch(
 </script>
 
 <template>
-  <div class="mx-[40px]" v-if="selectedWatch" :key="selectedWatch.id">
+  <div class="2xl:container" v-if="selectedWatch" :key="selectedWatch.id">
     <HeroComponent
       :title="selectedWatch.title"
       :category="selectedWatch.category"

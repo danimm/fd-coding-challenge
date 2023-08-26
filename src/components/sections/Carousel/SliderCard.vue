@@ -12,7 +12,11 @@ defineProps<{
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'Watch', params: { id: sku } }" :key="sku" class="snap-center">
+  <RouterLink
+    :to="{ name: 'Watch', params: { id: sku } }"
+    :key="sku"
+    class="snap-center 2xl:snap-end"
+  >
     <div v-bind="$attrs">
       <div class="pt-[19px] translate-y-[-100px]">
         <img class="h-[531px] w-[277px] mx-auto" :src="getImageUrl(mainImage)" :alt="subTitle" />
