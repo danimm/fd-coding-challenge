@@ -5,9 +5,11 @@ import MainLayout from '@/layouts/mainLayout.vue'
 <template>
   <main>
     <MainLayout>
-      <Transition name="fade">
-        <RouterView />
-      </Transition>
+      <RouterView v-slot="{ Component }">
+        <Transition name="fade">
+          <component :is="Component" />
+        </Transition>
+      </RouterView>
     </MainLayout>
   </main>
 </template>

@@ -115,19 +115,8 @@ watch(
     </div>
 
     <CarouselComponent
-      v-if="selectedWatch"
       :sub-title="selectedWatch.subTitle"
-      :carousel-length="selectedWatch.relatedProducts.length"
-    >
-      <template #slider-card>
-        <SliderCard
-          @click="goToTop"
-          class="mr-[40px]"
-          v-for="watch in selectedWatch.relatedProducts"
-          :key="watch.sku"
-          v-bind="watch"
-        />
-      </template>
-    </CarouselComponent>
+      :related-products="selectedWatch.relatedProducts"
+    />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 defineOptions({ name: 'NavBarLink' })
 
-withDefaults(defineProps<{ to?: string; activeRoute: boolean }>(), {
+withDefaults(defineProps<{ to?: string; activeRoute?: boolean }>(), {
   to: '#',
   activeRoute: false
 })
