@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import SliderCard from '@/components/sections/Carousel/SliderCard.vue'
-
 defineOptions({ name: 'CarouselComponent' })
+defineProps<{
+  subTitle: string
+  carouselLength: number
+}>()
 </script>
 
 <template>
@@ -10,7 +12,7 @@ defineOptions({ name: 'CarouselComponent' })
       <div class="col-span-3 flex flex-col justify-end items-start">
         <div class="">
           <h3 class="font-trade-bold text-primary text-normal uppercase mb-[42px]">
-            Altiplano collection
+            {{ subTitle }} collection
           </h3>
           <h2 class="font-minion text-title text-white mb-[100px]">Related Pieces</h2>
         </div>
@@ -26,13 +28,13 @@ defineOptions({ name: 'CarouselComponent' })
         </div>
 
         <div class="font-minion text-[20pt] text-secondary pl-[82px]">
-          <span class="text-white">3</span> <span>/ 9</span>
+          <span class="text-white">3</span> <span>/ {{ carouselLength }}</span>
         </div>
       </div>
 
       <div class="col-span-9 flex items-end overflow-x-scroll">
         <div class="flex max-w-100%">
-          <SliderCard class="mr-[40px]" v-for="(_, index) in 5" :key="index" />
+          <slot name="slider-card" />
         </div>
       </div>
     </div>

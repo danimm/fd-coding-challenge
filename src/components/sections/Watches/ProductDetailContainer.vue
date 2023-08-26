@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineOptions({ name: 'ProductItem' })
+defineOptions({ name: 'ProductDetailContainer' })
 
 defineSlots<{
   ['left-position'](props: {}): any
