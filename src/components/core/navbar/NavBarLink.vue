@@ -15,7 +15,7 @@ withDefaults(defineProps<{ to?: string; activeRoute?: boolean }>(), {
       'hover:scale-110 hover:text-primary ': !activeRoute
     }"
   >
-    <span class="relative" :class="{ 'active-route': activeRoute }">
+    <span class="relative" :class="{ 'active-route': activeRoute }" data-test="navbar-link">
       <slot />
     </span>
   </RouterLink>
@@ -29,7 +29,6 @@ withDefaults(defineProps<{ to?: string; activeRoute?: boolean }>(), {
 .active-route::before {
   content: '';
   position: absolute;
-  background-color: pink;
   width: 120%;
   height: 3px;
   bottom: -10px;

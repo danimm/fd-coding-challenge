@@ -15,6 +15,7 @@ export function useWatches() {
       WatchesService.getProducts(),
       PricesService.getPrices()
     ])
+
     if (response.some(({ status }) => status === 'rejected')) {
       watchesStore.$reset()
       return

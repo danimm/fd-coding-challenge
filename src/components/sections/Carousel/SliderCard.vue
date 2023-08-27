@@ -23,16 +23,26 @@ defineProps<{
         <div class="mt-[60px] text-center">
           <h4
             class="mb-[35px] tracking-widest text-secondary text-normal font-trade-bold uppercase"
+            data-test="category"
           >
             {{ category }}
           </h4>
-          <h2 class="mb-[22px] tracking-wider text-white text-title font-minion text-5xl">
+          <h2
+            class="mb-[22px] tracking-wider text-white text-title font-minion text-5xl"
+            data-test="subTitle"
+          >
             {{ subTitle }}
           </h2>
-          <h4 class="mb-[65px] tracking-wider text-secondary text-[13pt] font-trade-light">
+          <h4
+            class="mb-[65px] tracking-wider text-secondary text-[13pt] font-trade-light"
+            data-test="sku"
+          >
             Watch {{ sku }}
           </h4>
-          <h3 class="pb-[17px] tracking-wider text-white text-[20pt] font-minion font-bold">
+          <h3
+            class="pb-[17px] tracking-wider text-white text-[20pt] font-minion font-bold"
+            data-test="priceFormatted"
+          >
             {{ priceFormatted }}
           </h3>
         </div>

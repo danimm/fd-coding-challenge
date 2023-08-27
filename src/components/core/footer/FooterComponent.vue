@@ -14,8 +14,8 @@ defineOptions({ name: 'FooterComponent' })
         />
       </picture>
 
-      <p class="font-trade text-[15pt] mb-[25px]">Walchestrasse 9</p>
-      <p class="font-trade text-[15pt] mb-[75px]">8006 Zürich</p>
+      <p class="font-trade text-[15pt] mb-[25px]" data-test="address">Walchestrasse 9</p>
+      <p class="font-trade text-[15pt] mb-[75px]" data-test="zip">8006 Zürich</p>
 
       <div>
         <div class="md:flex md:justify-between">
@@ -24,6 +24,7 @@ defineOptions({ name: 'FooterComponent' })
             href="tel:+41010203040"
             target="_blank"
             class="font-trade text-[15pt] text-black no-underline"
+            data-test="tel"
           >
             + 41 (0) 10 20 30 40
           </a>
@@ -37,6 +38,7 @@ defineOptions({ name: 'FooterComponent' })
             href="tel:+41010203040"
             target="_blank"
             class="font-trade text-[15pt] text-black no-underline"
+            data-test="fax"
           >
             + 41 (0) 50 60 70 80
           </a>
@@ -50,6 +52,7 @@ defineOptions({ name: 'FooterComponent' })
             href="mailto:contact@thebrand.com"
             target="_blank"
             class="font-trade text-[15pt] text-primary no-underline"
+            data-test="email"
           >
             contact@thebrand.com
           </a>

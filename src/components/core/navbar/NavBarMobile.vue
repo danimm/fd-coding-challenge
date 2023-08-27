@@ -27,7 +27,7 @@ const isOpen = ref(false)
       <div class="w-full col-span-1 flex justify-end">
         <div class="flex flex-col justify-start" :class="{ 'pb-8': !isOpen }">
           <div @click="isOpen = !isOpen">
-            <button v-if="!isOpen">
+            <button v-if="!isOpen" data-test="burger">
               <svg
                 class="hover:text-primary text-slider-bg fill-current"
                 width="60"
@@ -44,7 +44,7 @@ const isOpen = ref(false)
               </svg>
             </button>
 
-            <button v-else>
+            <button v-else data-test="close">
               <svg
                 width="60"
                 height="60"
