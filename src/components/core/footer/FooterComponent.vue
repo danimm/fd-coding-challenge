@@ -3,7 +3,7 @@ defineOptions({ name: 'FooterComponent' })
 </script>
 
 <template>
-  <footer class="container grid grid-cols-12 my-[50px] lg:mb-[245px] lg:mt-[225px]">
+  <footer class="sm:container px-8 sm:px-0 grid grid-cols-12 my-[50px] lg:mb-[245px] lg:mt-[225px]">
     <!-- Contact -->
     <div class="col-span-12 md:col-span-4 2xl:col-span-2 pb-8 md:pb-0">
       <picture>
@@ -62,7 +62,7 @@ defineOptions({ name: 'FooterComponent' })
 
     <!-- Customer Care -->
     <div
-      class="col-span-6 md:col-span-4 2xl:col-start-4 2xl:col-span-2 flex flex-col items-start md:items-center"
+      class="col-span-12 sm:col-span-6 md:col-span-4 2xl:col-start-4 2xl:col-span-2 flex flex-col items-start md:items-center"
     >
       <div class="text-left">
         <h4 class="uppercase font-trade-bold font-normal mb-[45px]">Customer care</h4>
@@ -80,8 +80,10 @@ defineOptions({ name: 'FooterComponent' })
     </div>
 
     <!-- Stay in touch -->
-    <div class="col-span-6 md:col-span-4 2xl:col-start-7 2xl:col-span-2">
-      <h4 class="uppercase font-trade-bold font-normal mb-[44px]">Customer care</h4>
+    <div
+      class="mt-8 sm:mt-0 col-span-12 sm:col-span-6 md:col-span-4 2xl:col-start-7 2xl:col-span-2"
+    >
+      <h4 class="uppercase font-trade-bold font-normal mb-[44px]">Stay in touch</h4>
 
       <a href="#" class="block no-underline text-[15pt] text-secondary"
         >Sign up to our Newsletter</a

@@ -36,7 +36,7 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
       <div
         class="col-span-12 2xl:col-span-3 flex sm:flex-row flex-col justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center sm:py-8 2xl:py-0"
       >
-        <div class="">
+        <div class="mt-8 sm:mt-0">
           <h3 class="font-trade-bold text-primary text-normal uppercase mb-[42px]">
             {{ subTitle }} collection
           </h3>
