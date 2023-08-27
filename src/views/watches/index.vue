@@ -39,12 +39,12 @@ onMounted(async () => {
       <WatchSliderCardSkeleton v-for="(_, idx) in 30" :key="idx" />
     </template>
     <template v-else>
-      <SliderCard
-        v-bind="watch"
-        v-for="watch in watchesList"
-        :key="watch.sku"
-        class="w-full mx-auto md:mx-0 xl:w-[600px] h-[900px] mt-[100px] bg-black rounded-[5px] cursor-pointer"
-      />
+      <div v-for="watch in watchesList" :key="watch.sku">
+        <SliderCard
+          v-bind="watch"
+          class="w-full mx-auto md:mx-0 xl:w-[600px] h-[900px] mt-[100px] bg-black rounded-[5px] cursor-pointer"
+        />
+      </div>
     </template>
   </section>
 </template>
