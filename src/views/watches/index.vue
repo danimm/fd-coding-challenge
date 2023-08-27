@@ -33,7 +33,7 @@ onMounted(async () => {
 
 <template>
   <section
-    class="p-[40px] block md:grid 3xl:container lg:gap-[42px] xl:justify-items-center bg-slider-bg watches-container min-h[80vh]"
+    class="p-[20px] md:p-[40px] block md:grid 3xl:container lg:gap-[42px] xl:justify-items-center bg-slider-bg watches-container min-h[80vh]"
   >
     <template v-if="isLoading">
       <WatchSliderCardSkeleton v-for="(_, idx) in 30" :key="idx" />
@@ -42,7 +42,7 @@ onMounted(async () => {
       <div v-for="watch in watchesList" :key="watch.sku">
         <SliderCard
           v-bind="watch"
-          class="w-full mx-auto md:mx-0 xl:w-[600px] h-[900px] mt-[100px] bg-black rounded-[5px] cursor-pointer"
+          class="w-full mx-auto md:mx-0 xl:w-[600px] md:h-[900px] mt-[120px] bg-black rounded-[5px] cursor-pointer"
         />
       </div>
     </template>

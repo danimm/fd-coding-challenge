@@ -6,6 +6,11 @@ defineEmits<{ clicked: [] }>()
 
 <template>
   <picture>
-    <img @click="$emit('clicked')" :src="src" :alt="alt" />
+    <img
+      class="h-[30px] w-[30px] lg::h-auto md:w-auto object-contain"
+      @click="$emit('clicked')"
+      :src="src"
+      :alt="alt"
+    />
   </picture>
 </template>

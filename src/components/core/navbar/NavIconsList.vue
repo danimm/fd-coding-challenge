@@ -72,7 +72,9 @@ const rightNavIcons: NavigationIcon[] = [
 
 <template>
   <div class="container grid grid-cols-1 md:flex md:justify-between mb-[44px] lg:mt-[44px]">
-    <div class="col-span-1 flex gap-[60px] justify-between items-center mb-8 md:mb-0">
+    <div
+      class="col-span-1 flex gap-[60px] justify-center md:justify-between items-center mb-8 md:mb-0"
+    >
       <NavIcon
         v-for="({ src, alt, eventHandler }, index) in leftNavIcons"
         :key="index"
@@ -82,7 +84,9 @@ const rightNavIcons: NavigationIcon[] = [
       />
     </div>
 
-    <div class="col-span-1 flex gap-[40px] md:gap-[60px] justify-between items-center">
+    <div
+      class="col-span-1 flex gap-[30px] sm:gap-[60px] md:gap-[60px] justify-center md:justify-between items-center"
+    >
       <NavIcon
         v-for="({ src, alt, eventHandler }, index) in rightNavIcons"
         :key="index"

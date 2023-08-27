@@ -14,20 +14,27 @@ const cards = computed(() => {
   if (!container.value) return [] as Element[]
   return Array.from(container.value.children)
 })
-const lastIndexVisible = ref(2)
+const lastIndexVisible = ref(0)
 
-function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObserverEntry]) {
+//@ts-ignore
+function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
+  IntersectionObserverEntry
+]) {
+  console.log({ isVisible })
   if (isIntersecting) {
     lastIndexVisible.value = cards.value.findIndex((element) => element.isSameNode(target)) || 0
+    console.log({ lastIndexVisible: lastIndexVisible.value })
   }
 }
 </script>
 
 <template>
   <section class="bg-slider-bg">
-    <div class="2xl:container h-[1500px] grid grid-cols-12 pb-[250px] 2xl:gap-[42px]">
+    <div
+      class="2xl:container h-[1500px] grid grid-cols-12 sm:pb-[250px] sm:pb-[250px] 2xl:gap-[42px]"
+    >
       <div
-        class="col-span-12 2xl:col-span-3 flex justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center py-8 2xl:py-0"
+        class="col-span-12 2xl:col-span-3 flex sm:flex-row flex-col justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center py-8 2xl:py-0"
       >
         <div class="">
           <h3 class="font-trade-bold text-primary text-normal uppercase mb-[42px]">
@@ -52,7 +59,7 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
         </div>
       </div>
 
-      <div class="col-span-12 2xl:col-span-9 gap-0 flex items-end">
+      <div class="col-span-12 2xl:col-span-9 gap-0 flex items-end mb-[250px]">
         <div ref="container" class="flex w-full overflow-x-scroll snap-x snap-mandatory">
           <SliderCard
             v-intersection-observer="[
@@ -63,7 +70,7 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
             :key="watch.sku"
             v-bind="watch"
             @click="$emit('goToDetails')"
-            class="mr-[40px] w-[600px] mt-[100px] bg-black"
+            class="mr-[40px] w-[600px] mt-[50px] sm:mt-[100px] bg-black"
           />
         </div>
       </div>
