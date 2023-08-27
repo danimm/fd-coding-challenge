@@ -15,10 +15,7 @@ module.exports = {
       xl: '1256px',
       '2xl': '1536px',
       '3xl': '2200px',
-      '4xl': '2600px',
-      //
-      '2k-display': { raw: '(min-height: 800px)' }
-      // => @media (min-height: 800px) { ... }
+      '4xl': '2600px'
     },
     extend: {
       fontSize: {
