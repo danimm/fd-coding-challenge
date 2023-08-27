@@ -20,7 +20,11 @@ defineOptions({ name: 'FooterComponent' })
       <div>
         <div class="md:flex md:justify-between">
           <p class="inline pr-8 md:pr-0 md:block uppercase font-trade-bold text-[15pt]">T</p>
-          <a href="tel:+41010203040" class="font-trade text-[15pt] text-black no-underline">
+          <a
+            href="tel:+41010203040"
+            target="_blank"
+            class="font-trade text-[15pt] text-black no-underline"
+          >
             + 41 (0) 10 20 30 40
           </a>
         </div>
@@ -29,7 +33,11 @@ defineOptions({ name: 'FooterComponent' })
       <div>
         <div class="md:flex md:justify-between">
           <p class="inline pr-8 md:pr-0 md:block uppercase font-trade-bold text-[15pt]">F</p>
-          <a href="tel:+41010203040" class="font-trade text-[15pt] text-black no-underline">
+          <a
+            href="tel:+41010203040"
+            target="_blank"
+            class="font-trade text-[15pt] text-black no-underline"
+          >
             + 41 (0) 50 60 70 80
           </a>
         </div>
@@ -40,6 +48,7 @@ defineOptions({ name: 'FooterComponent' })
           <p class="inline pr-8 md:pr-0 md:block uppercase font-trade-bold text-[15pt]">M</p>
           <a
             href="mailto:contact@thebrand.com"
+            target="_blank"
             class="font-trade text-[15pt] text-primary no-underline"
           >
             contact@thebrand.com
