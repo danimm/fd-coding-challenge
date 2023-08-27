@@ -10,7 +10,7 @@ withDefaults(defineProps<{ to?: string; activeRoute?: boolean }>(), {
 <template>
   <RouterLink
     :to="to"
-    class="transition-transform no-underline text-black uppercase font-minion font-bold tracking-widest text-normal"
+    class="transition-transform no-underline text-black uppercase font-minion font-bold tracking-widest sm:text-normal"
     :class="{
       'hover:scale-110 hover:text-primary ': !activeRoute
     }"

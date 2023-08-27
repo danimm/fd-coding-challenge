@@ -20,14 +20,17 @@ defineEmits<{
 </script>
 
 <template>
-  <section class="py-[120px] lg:pt-0 3xl:py-[120px] bg-hero-bg-light">
-    <div class="container grid grid-cols-12 gap-[42px]">
+  <section class="py-[60px] sm:py-[120px] lg:pt-0 3xl:py-[120px] bg-hero-bg-light">
+    <div class="sm:container grid grid-cols-12 sm:gap-[42px]">
       <!-- Gallery -->
       <div class="col-span-12 3xl:col-span-7 4xl:col-span-6">
         <div class="md:grid md:grid-cols-6 lg:flex lg:justify-center 3xl:justify-between">
-          <div class="md:col-span-6 flex lg:flex-col justify-center items-start">
+          <div
+            class="grid grid-cols-2 md:col-span-6 sm:flex lg:flex-col justify-center sm:items-start"
+          >
             <div
-              class="pr-[33px] lg:pb-[33px] cursor-pointer"
+              class="pr-[15px] sm:pr-[33px] lg:pb-[33px] cursor-pointer"
+              :class="[index === gallery.length - 1 ? 'col-span-2' : 'col-span-1']"
               v-for="(image, index) in gallery"
               :key="image"
               @click="$emit('updateSelectedImage', { index, image })"
@@ -36,7 +39,7 @@ defineEmits<{
                 <img
                   :src="getImageUrl(image)"
                   :alt="title"
-                  class="h-[240px] w-[222px] object-contain bg-white"
+                  class="h-[240px] w-full sm:w-[222px] object-contain bg-white"
                   :class="[selectedGalleryImageIndex === index ? 'opacity-100' : 'opacity-30']"
                 />
               </picture>
@@ -44,27 +47,27 @@ defineEmits<{
           </div>
 
           <!-- Main Image -->
-          <picture class="col-span-6">
+          <picture class="col-span-12 sm:col-span-6">
             <img
               :src="getImageUrl(mainImage)"
               :alt="title"
-              class="h-[800px] md:h-[1000px] 3xl:max-w-[880px] w-full md:max-w-[850px] object-cover"
+              class="h-auto sm:h-[800px] md:h-[1000px] 3xl:max-w-[880px] w-full md:max-w-[850px] object-cover"
             />
           </picture>
         </div>
       </div>
 
       <!-- Description -->
-      <div class="col-span-12 3xl:col-start-8 3xl:col-span-5">
+      <div class="col-span-12 3xl:col-start-8 3xl:col-span-5 px-4 sm:px-0">
         <div class="lg:grid lg:grid-cols-6">
           <div class="lg:col-span-6 3xl:col-span-5">
             <h3
-              class="text-center lg:text-left lg:px-[40px] font-trade-bold text-normal text-primary lg:pb-4 uppercase"
+              class="text-center lg:text-left lg:px-[40px] font-trade-bold sm:text-normal text-small text-primary lg:pb-4 uppercase"
             >
               {{ category }} Watches
             </h3>
             <h1
-              class="font-minion text-center text-header-title-small 2xl:text-header-title lg:pb-8"
+              class="font-minion text-center text-title sm:text-header-title-small 2xl:text-header-title lg:pb-8"
             >
               {{ title }}
             </h1>

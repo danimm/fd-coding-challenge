@@ -1,9 +1,15 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import NavBarLink from '@/components/core/navbar/NavBarLink.vue'
 import NavIconsList from '@/components/core/navbar/NavIconsList.vue'
+import { useMediaQuery } from '@vueuse/core'
+import { useRoute } from 'vue-router'
 
 defineOptions({ name: 'NavBarMobile' })
+
+const isXsScreen = useMediaQuery('(max-width: 689px)')
+const route = useRoute()
+
 const links = [
   { path: '/watches', text: 'Watches', active: true },
   { path: '#', text: 'Jewellery', active: false },
@@ -14,13 +20,23 @@ const links = [
 ]
 
 const isOpen = ref(false)
+
+watch(
+  () => route.name,
+  () => {
+    isOpen.value = false
+  }
+)
 </script>
 
 <template>
   <!-- Icons -->
   <div class="px-[20px] md:container lg:hidden">
     <div class="grid grid-cols-12">
-      <div class="col-span-11 flex justify-center pb-[50px]">
+      <div
+        class="col-span-11 flex justify-center sm:pb-[50px]"
+        :class="[isOpen ? 'pb-[40px]' : 'pb-[20px]']"
+      >
         <slot />
       </div>
       <!-- NavBarIcon container -->
@@ -30,8 +46,8 @@ const isOpen = ref(false)
             <button v-if="!isOpen" data-test="burger">
               <svg
                 class="hover:text-primary text-slider-bg fill-current"
-                width="60"
-                height="60"
+                :width="isXsScreen ? 40 : 60"
+                :height="isXsScreen ? 40 : 60"
                 viewBox="0 0 16 16"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -46,8 +62,8 @@ const isOpen = ref(false)
 
             <button v-else data-test="close">
               <svg
-                width="60"
-                height="60"
+                :width="isXsScreen ? 40 : 60"
+                :height="isXsScreen ? 40 : 60"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 class="hover:text-primary text-slider-bg fill-current"

@@ -11,7 +11,7 @@ defineProps<{ descriptionFirst?: boolean; firstElement?: boolean }>()
 
 <template>
   <section
-    class="container flex-col xl:grid xl:grid-cols-12 pt-0 pb-[150px] md:py-[100px] xl:pb-[136px] xl:max-h-[998px"
+    class="sm:container flex-col xl:grid xl:grid-cols-12 pt-0 pb-[150px] md:py-[100px] xl:pb-[136px] xl:max-h-[998px"
     :class="{ 'xl:pt-[216px]': firstElement }"
   >
     <div

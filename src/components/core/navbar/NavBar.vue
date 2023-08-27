@@ -16,7 +16,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         <img
           src="@/assets/images/logos/logo.png"
           alt="The Brand logo"
-          class="lg:w-[420px] xl:w-[300px] lg:object-contain 2xl:w-[500px] h-[48px]"
+          class="w-[70vw] object-contain lg:w-[420px] xl:w-[300px] lg:object-contain 2xl:w-[500px] h-[48px]"
         />
       </picture>
     </a>
