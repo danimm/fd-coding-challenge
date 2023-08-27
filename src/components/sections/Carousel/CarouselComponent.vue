@@ -7,10 +7,7 @@ import SliderCard from '@/components/sections/Carousel/SliderCard.vue'
 
 defineOptions({ name: 'CarouselComponent' })
 defineProps<{ subTitle: string; relatedProducts: PopulatedProduct[] }>()
-
-function goToTop() {
-  window.scrollTo(0, 0)
-}
+defineEmits<{ goToDetails: [] }>()
 
 const container = ref<HTMLElement | null>(null)
 const cards = computed(() => {
@@ -28,17 +25,19 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
 
 <template>
   <div class="bg-slider-bg">
-    <div class="container h-[1500px] grid grid-cols-12 pb-[250px] gap-[42px]">
-      <div class="col-span-3 flex flex-col justify-end items-start">
+    <div class="2xl:container h-[1500px] grid grid-cols-12 pb-[250px] 2xl:gap-[42px]">
+      <div
+        class="col-span-12 2xl:col-span-3 flex justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center py-8 2xl:py-0"
+      >
         <div class="">
           <h3 class="font-trade-bold text-primary text-normal uppercase mb-[42px]">
             {{ subTitle }} collection
           </h3>
-          <h2 class="font-minion text-title text-white mb-[100px]">Related Pieces</h2>
+          <h2 class="font-minion text-title text-white 2xl:mb-[100px]">Related Pieces</h2>
         </div>
 
         <div
-          class="border-2 w-[220px] h-[220px] border-[#1e1e1e] rounded-[50%] flex flex-col justify-center items-center mb-[100px]"
+          class="border-2 w-[220px] h-[220px] border-[#1e1e1e] rounded-[50%] flex flex-col justify-center items-center 2xl:mb-[100px]"
         >
           <picture>
             <img src="@/assets/images/icons/arrow.png" alt="Arrow left" class="pb-[35px]" />
@@ -47,13 +46,13 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
           <h3 class="uppercase text-[14pt] tracking-widest text-white font-trade-bold">Drag</h3>
         </div>
 
-        <div class="font-minion text-[20pt] text-secondary pl-[82px]">
+        <div class="font-minion text-[20pt] text-secondary 2xl:pl-[82px]">
           <span class="text-white">{{ lastIndexVisible + 1 }}</span>
           <span>/ {{ relatedProducts.length }}</span>
         </div>
       </div>
 
-      <div class="col-span-9 gap-0 flex items-end">
+      <div class="col-span-12 2xl:col-span-9 gap-0 flex items-end">
         <div ref="container" class="flex w-full overflow-x-scroll snap-x snap-mandatory">
           <SliderCard
             v-intersection-observer="[
@@ -63,8 +62,8 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
             v-for="watch in relatedProducts"
             :key="watch.sku"
             v-bind="watch"
-            @click="goToTop"
-            class="mr-[40px]"
+            @click="$emit('goToDetails')"
+            class="mr-[40px] w-[600px] mt-[100px] bg-black"
           />
         </div>
       </div>

@@ -33,21 +33,31 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="p-[40px] mx-[40px] bg-slider-bg watches-container min-h[80vh]">
+  <div
+    class="p-[40px] md:grid 3xl:container lg:gap-[42px] xl:justify-items-center bg-slider-bg watches-container min-h[80vh]"
+  >
     <template v-if="isLoading">
       <WatchSliderCardSkeleton v-for="(_, idx) in 30" :key="idx" />
     </template>
     <template v-else>
-      <SliderCard v-bind="watch" v-for="watch in watchesList" :key="watch.sku" />
+      <SliderCard
+        v-bind="watch"
+        v-for="watch in watchesList"
+        :key="watch.sku"
+        class="w-full mx-auto md:mx-0 xl:w-[600px] h-[900px] mt-[100px] bg-black rounded-[5px] cursor-pointer"
+      />
     </template>
   </div>
 </template>
 
 <style scoped>
 .watches-container {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
-  justify-items: center;
-  gap: 42px;
+}
+
+@media screen and (max-width: 768px) {
+  .watches-container {
+    display: block;
+  }
 }
 </style>

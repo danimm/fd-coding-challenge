@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWatches } from '@/composables/useWatches'
 import type { PopulatedPricedProduct } from '@/types/Products'
@@ -41,6 +41,10 @@ function updateMainImage(payload: { index: number; image: string }) {
   heroImage.value = { ...payload }
 }
 
+function goToTop() {
+  window.scrollTo(0, 0)
+}
+
 watch(
   () => route.params.id,
   async () => {
@@ -59,10 +63,14 @@ watch(
     immediate: true
   }
 )
+
+onMounted(() => {
+  goToTop()
+})
 </script>
 
 <template>
-  <div class="mx-[40px]" v-if="selectedWatch" :key="selectedWatch.id">
+  <div class="2xl:container" v-if="selectedWatch" :key="selectedWatch.id">
     <HeroComponent
       :title="selectedWatch.title"
       :category="selectedWatch.category"
@@ -75,7 +83,7 @@ watch(
       @update-selected-image="updateMainImage"
     />
     <div class="container">
-      <ProductDetailContainer descriptionFirst>
+      <ProductDetailContainer descriptionFirst first-element>
         <template #left-position>
           <ProductDescription
             :title="selectedWatch.productDetails.title"
@@ -109,6 +117,7 @@ watch(
     <CarouselComponent
       :sub-title="selectedWatch.subTitle"
       :related-products="selectedWatch.relatedProducts"
+      @go-to-details="goToTop"
     />
   </div>
 </template>

@@ -1,54 +1,58 @@
 <script lang="ts" setup>
 import NavBarLink from '@/components/core/navbar/NavBarLink.vue'
+import NavBarMobile from '@/components/core/navbar/NavBarMobile.vue'
 
 defineOptions({ name: 'NavBar' })
+
+import { createReusableTemplate } from '@vueuse/core'
+
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
 <template>
-  <div class="container grid grid-cols-12 gap-[42px] items-end mb-[75px] mt-[55px]">
+  <DefineTemplate>
+    <a href="/">
+      <picture>
+        <img
+          src="@/assets/images/logos/logo.png"
+          alt="The Brand logo"
+          class="lg:w-[420px] xl:w-[300px] lg:object-contain 2xl:w-[500px] h-[48px]"
+        />
+      </picture>
+    </a>
+  </DefineTemplate>
+
+  <nav
+    class="container hidden lg:grid grid-cols-12 gap-[22px] 3xl:gap-[42px] items-end mb-[75px] mt-[55px]"
+  >
+    <!-- Logo on lg -->
+    <div class="3xl:hidden flex justify-center col-span-12 pb-8">
+      <ReuseTemplate />
+    </div>
+
     <!-- Left Items -->
-    <div class="grid grid-cols-3 text-start col-span-4">
+    <div class="flex justify-between col-span-6 3xl:text-start 3xl:col-span-4">
       <NavBarLink active-route to="/watches"> Watches </NavBarLink>
       <NavBarLink> Jewellery </NavBarLink>
       <NavBarLink> Wedding </NavBarLink>
     </div>
 
-    <!-- Logo -->
-    <div class="flex justify-center col-span-4 pb-3">
-      <a href="/">
-        <picture>
-          <img
-            src="@/assets/images/logos/logo.png"
-            alt="The Brand logo"
-            class="w-[500px] h-[48px]"
-          />
-        </picture>
-      </a>
+    <!-- Logo up xl -->
+    <div class="hidden 3xl:flex justify-center 3xl:col-span-4 pb-3">
+      <ReuseTemplate />
     </div>
 
     <!-- Right Items -->
-    <div class="grid grid-cols-3 text-end col-span-4">
+    <div
+      class="flex justify-between col-span-6 col-start-8 3xl:col-start-auto 3xl:text-start 3xl:col-span-4"
+    >
       <NavBarLink> Academy </NavBarLink>
       <NavBarLink> Company </NavBarLink>
       <NavBarLink> Stores </NavBarLink>
     </div>
-  </div>
+  </nav>
+
+  <NavBarMobile class="lg:hidden mt-[40px]">
+    <ReuseTemplate />
+  </NavBarMobile>
 </template>
-
-<style scoped>
-.active-route {
-  position: relative;
-  @apply text-primary font-trade-bold;
-}
-
-.active-route::before {
-  content: '';
-  position: absolute;
-  background-color: pink;
-  width: 100%;
-  height: 3px;
-  bottom: -10px;
-  left: 0;
-  @apply bg-primary text-primary;
-}
-</style>

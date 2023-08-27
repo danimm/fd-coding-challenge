@@ -8,7 +8,9 @@ defineOptions({ name: 'MainLayout' })
 
 <template>
   <div>
-    <NavIconsList />
+    <div class="hidden lg:block">
+      <NavIconsList />
+    </div>
     <NavBar />
     <slot />
     <FooterComponent />

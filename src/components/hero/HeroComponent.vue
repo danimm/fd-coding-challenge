@@ -20,13 +20,14 @@ defineEmits<{
 </script>
 
 <template>
-  <div class="h-[1970px] pt-[120px] pb-[140px] bg-hero-bg-light">
+  <div class="py-[120px] lg:pt-0 3xl:py-[120px] bg-hero-bg-light">
     <div class="container grid grid-cols-12 gap-[42px]">
-      <div class="col-span-6">
-        <div class="flex justify-between">
-          <div class="flex flex-col justify-center items-start">
+      <!-- Gallery -->
+      <div class="col-span-12 3xl:col-span-7 4xl:col-span-6">
+        <div class="md:grid md:grid-cols-6 lg:flex lg:justify-center 3xl:justify-between">
+          <div class="md:col-span-6 flex lg:flex-col justify-center items-start">
             <div
-              class="pb-[33px] cursor-pointer"
+              class="pr-[33px] lg:pb-[33px] cursor-pointer"
               v-for="(image, index) in gallery"
               :key="image"
               @click="$emit('updateSelectedImage', { index, image })"
@@ -42,34 +43,48 @@ defineEmits<{
             </div>
           </div>
 
-          <picture>
+          <!-- Main Image -->
+          <picture class="col-span-6">
             <img
               :src="getImageUrl(mainImage)"
               :alt="title"
-              class="h-[1776px] max-w-[880px] w-full object-cover"
+              class="h-[800px] md:h-[1000px] 3xl:max-w-[880px] w-full md:max-w-[850px] object-cover"
             />
           </picture>
         </div>
       </div>
 
-      <div class="col-start-8 col-span-5 py-[212px]">
-        <div class="grid grid-cols-6">
-          <div class="col-span-5">
-            <h3 class="font-trade-bold text-normal text-primary pb-[78px] uppercase">
+      <!-- Description -->
+      <div class="col-span-12 3xl:col-start-8 3xl:col-span-5">
+        <div class="lg:grid lg:grid-cols-6">
+          <div class="lg:col-span-6 3xl:col-span-5">
+            <h3
+              class="text-center lg:text-left font-trade-bold text-normal text-primary lg:pb-4 uppercase"
+            >
               {{ category }} Watches
             </h3>
-            <h1 class="font-minion text-header-title pb-[132px]">{{ title }}</h1>
+            <h1
+              class="font-minion text-center text-header-title-small 2xl:text-header-title lg:pb-8"
+            >
+              {{ title }}
+            </h1>
           </div>
 
-          <div class="col-start-2 col-span-5">
-            <h2 class="font-minion text-[28pt] text-primary pb-[80px]">{{ priceFormatted }}</h2>
-            <span class="font-trade-light text-small text-secondary pb-[38px]">
+          <div class="lg:px-[40px] lg:col-span-6 3xl:col-start-2 3xl:col-span-5">
+            <h2 class="font-minion text-[28pt] text-primary pb-[80px] text-center 2xl::text-left">
+              {{ priceFormatted }}
+            </h2>
+            <span class="font-trade-light text-header-text-small 2xl:text-small text-text">
               Watch {{ sku }}
             </span>
-            <p class="font-minion text-header-text text-text pb-[117px] pr-[20px]">
+            <p
+              class="font-minion text-header-text-small 2xl:text-header-text text-text pb-[117px] mt-[28px] pr-[20px]"
+            >
               {{ shortDescription }}
             </p>
-            <ButtonComponent> Add to shopping bag </ButtonComponent>
+            <div class="flex justify-center 2xl:block 2xl:text-start">
+              <ButtonComponent> Add to shopping bag </ButtonComponent>
+            </div>
           </div>
         </div>
       </div>
