@@ -2,8 +2,9 @@
 
 This is the result of my coding challenge for the company Fire Digital.
 
-You can find the deployed version of this coding challenge at the following URL: 
-[link]()
+[Deployed version](https://fd-coding-challenge.netlify.app/watches)
+
+[Source code](https://github.com/danimm/fd-coding-challenge)
 
 ## Functionality implemented
 
