@@ -2,8 +2,12 @@
 import { ref } from 'vue'
 import NavBarLink from '@/components/core/navbar/NavBarLink.vue'
 import NavIconsList from '@/components/core/navbar/NavIconsList.vue'
+import { useMediaQuery } from '@vueuse/core'
 
 defineOptions({ name: 'NavBarMobile' })
+
+const isXsScreen = useMediaQuery('(max-width: 689px)')
+
 const links = [
   { path: '/watches', text: 'Watches', active: true },
   { path: '#', text: 'Jewellery', active: false },
@@ -20,7 +24,7 @@ const isOpen = ref(false)
   <!-- Icons -->
   <div class="px-[20px] md:container lg:hidden">
     <div class="grid grid-cols-12">
-      <div class="col-span-11 flex justify-center pb-[50px]">
+      <div class="col-span-11 flex justify-center pb-[20px] sm:pb-[50px]">
         <slot />
       </div>
       <!-- NavBarIcon container -->
@@ -30,8 +34,8 @@ const isOpen = ref(false)
             <button v-if="!isOpen" data-test="burger">
               <svg
                 class="hover:text-primary text-slider-bg fill-current"
-                width="60"
-                height="60"
+                :width="isXsScreen ? 40 : 60"
+                :height="isXsScreen ? 40 : 60"
                 viewBox="0 0 16 16"
                 xmlns="http://www.w3.org/2000/svg"
               >
