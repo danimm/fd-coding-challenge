@@ -82,6 +82,7 @@ onMounted(() => {
       :main-image="heroImage.image"
       @update-selected-image="updateMainImage"
     />
+
     <div class="container">
       <ProductDetailContainer descriptionFirst first-element>
         <template #left-position>

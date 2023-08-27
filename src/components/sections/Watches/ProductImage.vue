@@ -49,9 +49,10 @@ const imageDynamicStyles = computed(() => ({
   view-timeline: --image;
   view-timeline-axis: block;
   animation-timeline: --image;
-  animation-name: show;
 
-  animation-range: entry 25% cover 30%;
+  animation-name: show;
+  animation-duration: 2s;
+  animation-range: entry 5% cover 50%;
   animation-fill-mode: both;
 }
 </style>
