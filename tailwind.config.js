@@ -15,12 +15,17 @@ module.exports = {
       xl: '1256px',
       '2xl': '1536px',
       '3xl': '2200px',
-      '4xl': '2600px'
+      '4xl': '2600px',
+      //
+      '2k-display': { raw: '(min-height: 800px)' }
+      // => @media (min-height: 800px) { ... }
     },
     extend: {
       fontSize: {
         'header-title': '80pt',
+        'header-title-small': '60pt',
         'header-text': '26pt',
+        'header-text-small': '20pt',
         title: '40pt',
         normal: '16pt',
         'footer-text': '15pt',

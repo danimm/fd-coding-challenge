@@ -21,7 +21,7 @@ const imageDynamicStyles = computed(() => ({
 </script>
 
 <template>
-  <div :class="{ 'overflow-y-hidden': imageOverflow }" class="bg-slider-bg h-[100%]">
+  <div :class="{ 'overflow-y-hidden': imageOverflow }" class="watch bg-slider-bg h-[100%]">
     <picture>
       <img
         :class="imageDynamicStyles"
@@ -32,3 +32,26 @@ const imageDynamicStyles = computed(() => ({
     </picture>
   </div>
 </template>
+
+<style scoped>
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+.watch {
+  view-timeline: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+}
+</style>
