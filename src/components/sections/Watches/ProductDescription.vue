@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div>
-    <div class="lg:pl-4 xl:pl-[200px] lg:mb-4 xl:mb-[166px]">
+    <div class="lg:pl-4 pl-[50px] 3xl:pl-[200px] lg:mb-4 xl:mb-[166px]">
       <h3 class="font-trade-bold text-normal text-primary uppercase lg:mb-4 xl:mb-[48px] pt-[44px]">
         {{ subTitle }}
       </h3>

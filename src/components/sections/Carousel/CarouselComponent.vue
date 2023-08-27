@@ -7,10 +7,7 @@ import SliderCard from '@/components/sections/Carousel/SliderCard.vue'
 
 defineOptions({ name: 'CarouselComponent' })
 defineProps<{ subTitle: string; relatedProducts: PopulatedProduct[] }>()
-
-function goToTop() {
-  window.scrollTo(0, 0)
-}
+defineEmits<{ goToDetails: [] }>()
 
 const container = ref<HTMLElement | null>(null)
 const cards = computed(() => {
@@ -65,7 +62,7 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
             v-for="watch in relatedProducts"
             :key="watch.sku"
             v-bind="watch"
-            @click="goToTop"
+            @click="$emit('goToDetails')"
             class="mr-[40px] w-[600px] mt-[100px] bg-black"
           />
         </div>

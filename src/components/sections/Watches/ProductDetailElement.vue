@@ -10,9 +10,9 @@ defineProps<ProductDetail>()
   <div
     class="w-full h-[125px] grid grid-cols-3 gap-[18px] border-b-[1px] border-b-secondary py-[35px]"
   >
-    <picture class="pl-[54px]">
+    <picture class="lg:pl-[24px] 2xl:pl-[54px]">
       <img
-        class="w-[70px] h-[70px] object-cover"
+        class="w-full 2xl:w-[70px] h-[70px] object-contain 3xl:object-cover"
         :src="getImageUrl(`icons/${iconTarget}.png`)"
         :alt="iconTarget"
       />
