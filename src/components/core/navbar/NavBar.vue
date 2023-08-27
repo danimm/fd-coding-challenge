@@ -23,32 +23,36 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
   </DefineTemplate>
 
   <nav
-    class="container hidden lg:grid lg:grid-cols-9 2xl:grid-cols-12 xl:gap-[22px] 2xl:gap-[42px] items-end mb-[75px] mt-[55px]"
+    class="container hidden lg:grid grid-cols-12 gap-[22px] 3xl:gap-[42px] items-end mb-[75px] mt-[55px]"
   >
     <!-- Logo on lg -->
-    <div class="xl:hidden flex justify-center col-span-9 pb-8">
+    <div class="3xl:hidden flex justify-center col-span-12 pb-8">
       <ReuseTemplate />
     </div>
 
     <!-- Left Items -->
-    <div class="flex justify-between lg:col-span-4 xl:col-span-3 2xl:text-start 2xl:col-span-4">
+    <div class="flex justify-between col-span-6 3xl:text-start 3xl:col-span-4">
       <NavBarLink active-route to="/watches"> Watches </NavBarLink>
       <NavBarLink> Jewellery </NavBarLink>
       <NavBarLink> Wedding </NavBarLink>
     </div>
 
     <!-- Logo up xl -->
-    <div class="hidden xl:flex justify-center xl:col-span-3 2xl:col-span-4 pb-3">
+    <div class="hidden 3xl:flex justify-center 3xl:col-span-4 pb-3">
       <ReuseTemplate />
     </div>
 
     <!-- Right Items -->
-    <div class="flex justify-between lg:col-start-6 lg:col-span-4 xl:col-span-3 2xl:col-span-4">
+    <div
+      class="flex justify-between col-span-6 col-start-8 3xl:col-start-auto 3xl:text-start 3xl:col-span-4"
+    >
       <NavBarLink> Academy </NavBarLink>
       <NavBarLink> Company </NavBarLink>
       <NavBarLink> Stores </NavBarLink>
     </div>
   </nav>
 
-  <NavBarMobile class="lg:hidden mt-[40px]" />
+  <NavBarMobile class="lg:hidden mt-[40px]">
+    <ReuseTemplate />
+  </NavBarMobile>
 </template>
