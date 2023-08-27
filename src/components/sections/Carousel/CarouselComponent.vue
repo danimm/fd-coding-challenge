@@ -31,12 +31,12 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
 <template>
   <section class="bg-slider-bg">
     <div
-      class="2xl:container h-[1500px] grid grid-cols-12 sm:pb-[250px] sm:pb-[250px] 2xl:gap-[42px]"
+      class="2xl:container 2xl:h-[1500px] grid grid-cols-12 pb-[50px] md::pb-[250px] 2xl:gap-[42px]"
     >
       <div
-        class="col-span-12 2xl:col-span-3 flex sm:flex-row flex-col justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center py-8 2xl:py-0"
+        class="col-span-12 2xl:col-span-3 flex sm:flex-row flex-col justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center sm:py-8 2xl:py-0"
       >
-        <div class="">
+        <div class="mt-8 sm:mt-0">
           <h3 class="font-trade-bold text-primary text-normal uppercase mb-[42px]">
             {{ subTitle }} collection
           </h3>
@@ -59,7 +59,9 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
         </div>
       </div>
 
-      <div class="col-span-12 2xl:col-span-9 gap-0 flex items-end mb-[250px]">
+      <div
+        class="col-span-12 2xl:col-span-9 gap-0 flex items-end mb-[50px] lg:mb-[250px] mt-[30px]"
+      >
         <div ref="container" class="flex w-full overflow-x-scroll snap-x snap-mandatory">
           <SliderCard
             v-intersection-observer="[
@@ -70,7 +72,7 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
             :key="watch.sku"
             v-bind="watch"
             @click="$emit('goToDetails')"
-            class="mr-[40px] w-[600px] mt-[50px] sm:mt-[100px] bg-black"
+            class="mr-[20px] sm:mr-[40px] w-[75vw] lg:w-[600px] md:mt-[80px] bg-black"
           />
         </div>
       </div>
