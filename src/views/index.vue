@@ -1,19 +1,9 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
-import { useWatches } from '@/composables/useWatches'
-
 defineOptions({ name: 'HomeView' })
 
-const { fetchAllWatchesWithPrices } = useWatches()
-
-onMounted(async () => {
-  await fetchAllWatchesWithPrices()
-})
+/*
+  *INFO*
+  In this coding challenge this page has no content/relevance
+  so a redirect to /watches will be made.
+ */
 </script>
-
-<template>
-  <div class="mx-[40px]">
-    <h1>Home page</h1>
-  </div>
-</template>

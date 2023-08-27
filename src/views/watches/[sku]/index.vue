@@ -14,7 +14,6 @@ defineOptions({ name: 'WatchView' })
 
 const route = useRoute()
 const router = useRouter()
-
 const { findBySku } = useWatches()
 
 const selectedWatch = ref<PopulatedPricedProduct | null>(null)
@@ -36,6 +35,18 @@ const watchDetailImages = computed(() => {
 
   return { gallery, details }
 })
+
+// Abstractions like this one are recommended to improve the readability of the template part
+const heroComponentProps = computed(() => ({
+  title: selectedWatch.value?.title || '',
+  category: selectedWatch.value?.category || '',
+  priceFormatted: selectedWatch.value?.price.priceFormatted || '',
+  shortDescription: selectedWatch.value?.shortDescription || '',
+  sku: selectedWatch.value?.sku || '',
+  gallery: watchDetailImages.value.gallery,
+  selectedGalleryImageIndex: heroImage.value.index,
+  mainImage: heroImage.value.image
+}))
 
 function updateMainImage(payload: { index: number; image: string }) {
   heroImage.value = { ...payload }
@@ -59,9 +70,7 @@ watch(
       await router.push({ name: 'Watches' })
     }
   },
-  {
-    immediate: true
-  }
+  { immediate: true }
 )
 
 onMounted(() => {
@@ -71,17 +80,7 @@ onMounted(() => {
 
 <template>
   <div class="2xl:container" v-if="selectedWatch" :key="selectedWatch.id">
-    <HeroComponent
-      :title="selectedWatch.title"
-      :category="selectedWatch.category"
-      :price-formatted="selectedWatch.price.priceFormatted"
-      :short-description="selectedWatch.shortDescription"
-      :sku="selectedWatch.sku"
-      :gallery="watchDetailImages.gallery"
-      :selected-gallery-image-index="heroImage.index"
-      :main-image="heroImage.image"
-      @update-selected-image="updateMainImage"
-    />
+    <HeroComponent v-bind="heroComponentProps" @update-selected-image="updateMainImage" />
 
     <div class="container">
       <ProductDetailContainer descriptionFirst first-element>
