@@ -26,7 +26,6 @@ interface NavigationIcon {
   src: string
   alt: string
   eventHandler: any
-  // TODO: type that
 }
 
 const leftNavIcons: NavigationIcon[] = [

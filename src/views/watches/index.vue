@@ -32,7 +32,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
+  <section
     class="p-[40px] block md:grid 3xl:container lg:gap-[42px] xl:justify-items-center bg-slider-bg watches-container min-h[80vh]"
   >
     <template v-if="isLoading">
@@ -46,7 +46,7 @@ onMounted(async () => {
         class="w-full mx-auto md:mx-0 xl:w-[600px] h-[900px] mt-[100px] bg-black rounded-[5px] cursor-pointer"
       />
     </template>
-  </div>
+  </section>
 </template>
 
 <style scoped>

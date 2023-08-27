@@ -11,8 +11,12 @@ defineOptions({ name: 'MainLayout' })
     <div class="hidden lg:block">
       <NavIconsList />
     </div>
+
     <NavBar />
+
+    <!-- Current Page Component -->
     <slot />
+
     <FooterComponent />
   </div>
 </template>

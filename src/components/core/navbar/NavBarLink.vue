@@ -2,7 +2,7 @@
 defineOptions({ name: 'NavBarLink' })
 
 withDefaults(defineProps<{ to?: string; activeRoute?: boolean }>(), {
-  to: '#',
+  to: '',
   activeRoute: false
 })
 </script>

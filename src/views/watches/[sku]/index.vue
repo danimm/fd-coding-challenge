@@ -82,37 +82,33 @@ onMounted(() => {
   <div class="2xl:container" v-if="selectedWatch" :key="selectedWatch.id">
     <HeroComponent v-bind="heroComponentProps" @update-selected-image="updateMainImage" />
 
-    <div class="container">
-      <ProductDetailContainer descriptionFirst first-element>
-        <template #left-position>
-          <ProductDescription
-            :title="selectedWatch.productDetails.title"
-            :details="selectedWatch.productDetails.data"
-            sub-title="Product Details"
-          />
-        </template>
+    <ProductDetailContainer descriptionFirst first-element>
+      <template #left-position>
+        <ProductDescription
+          :title="selectedWatch.productDetails.title"
+          :details="selectedWatch.productDetails.data"
+          sub-title="Product Details"
+        />
+      </template>
 
-        <template #right-position>
-          <ProductImage :image="watchDetailImages.details.firstDetail" />
-        </template>
-      </ProductDetailContainer>
-    </div>
+      <template #right-position>
+        <ProductImage :image="watchDetailImages.details.firstDetail" />
+      </template>
+    </ProductDetailContainer>
 
-    <div class="container">
-      <ProductDetailContainer>
-        <template #left-position>
-          <ProductImage :image="watchDetailImages.details.secondDetail" />
-        </template>
+    <ProductDetailContainer>
+      <template #left-position>
+        <ProductImage :image="watchDetailImages.details.secondDetail" />
+      </template>
 
-        <template #right-position>
-          <ProductDescription
-            :title="selectedWatch.productSpecifications.title"
-            :details="selectedWatch.productSpecifications.data"
-            sub-title="Specifications"
-          />
-        </template>
-      </ProductDetailContainer>
-    </div>
+      <template #right-position>
+        <ProductDescription
+          :title="selectedWatch.productSpecifications.title"
+          :details="selectedWatch.productSpecifications.data"
+          sub-title="Specifications"
+        />
+      </template>
+    </ProductDetailContainer>
 
     <CarouselComponent
       :sub-title="selectedWatch.subTitle"

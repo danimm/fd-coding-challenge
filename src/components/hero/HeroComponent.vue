@@ -20,7 +20,7 @@ defineEmits<{
 </script>
 
 <template>
-  <div class="py-[120px] lg:pt-0 3xl:py-[120px] bg-hero-bg-light">
+  <section class="py-[120px] lg:pt-0 3xl:py-[120px] bg-hero-bg-light">
     <div class="container grid grid-cols-12 gap-[42px]">
       <!-- Gallery -->
       <div class="col-span-12 3xl:col-span-7 4xl:col-span-6">
@@ -59,7 +59,7 @@ defineEmits<{
         <div class="lg:grid lg:grid-cols-6">
           <div class="lg:col-span-6 3xl:col-span-5">
             <h3
-              class="text-center lg:text-left font-trade-bold text-normal text-primary lg:pb-4 uppercase"
+              class="text-center lg:text-left lg:px-[40px] font-trade-bold text-normal text-primary lg:pb-4 uppercase"
             >
               {{ category }} Watches
             </h3>
@@ -71,7 +71,7 @@ defineEmits<{
           </div>
 
           <div class="lg:px-[40px] lg:col-span-6 3xl:col-start-2 3xl:col-span-5">
-            <h2 class="font-minion text-[28pt] text-primary pb-[80px] text-center 2xl::text-left">
+            <h2 class="font-minion text-[28pt] text-primary pb-[80px] text-center 2xl:text-left">
               {{ priceFormatted }}
             </h2>
             <span class="font-trade-light text-header-text-small 2xl:text-small text-text">
@@ -89,5 +89,5 @@ defineEmits<{
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

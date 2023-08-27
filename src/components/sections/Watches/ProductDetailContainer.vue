@@ -10,14 +10,14 @@ defineProps<{ descriptionFirst?: boolean; firstElement?: boolean }>()
 </script>
 
 <template>
-  <div
-    class="lex flex-col xl:grid xl:grid-cols-12 pt-0 pb-[150px] md:py-[100px] xl:pb-[136px] xl:max-h-[998px"
+  <section
+    class="container flex-col xl:grid xl:grid-cols-12 pt-0 pb-[150px] md:py-[100px] xl:pb-[136px] xl:max-h-[998px"
     :class="{ 'xl:pt-[216px]': firstElement }"
   >
     <div
       class="h-[100%]"
       :class="[
-        descriptionFirst ? 'order-1 xl:col-span-6 pb-8 xl:pb-0' : 'xl:col-span-5 3xl:col-span-4'
+        descriptionFirst ? 'order-1 xl:col-span-6 pb-8 xl:pb-0' : 'xl:col-span-5 3xl:col-span-5'
       ]"
     >
       <slot name="left-position" />
@@ -27,10 +27,10 @@ defineProps<{ descriptionFirst?: boolean; firstElement?: boolean }>()
       :class="[
         descriptionFirst
           ? 'order-1 xl:col-start-8 xl:col-span-6'
-          : '3xl:col-start-6 xl:col-start-7 xl:col-span-7'
+          : '3xl:col-start-7 3xl:col-span-6 xl:col-start-7 xl:col-span-7'
       ]"
     >
       <slot name="right-position" />
     </div>
-  </div>
+  </section>
 </template>

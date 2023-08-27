@@ -25,7 +25,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
   <nav
     class="container hidden lg:grid grid-cols-12 gap-[22px] 3xl:gap-[42px] items-end mb-[75px] mt-[55px]"
   >
-    <!-- Logo on lg -->
+    <!-- Logo -->
     <div class="3xl:hidden flex justify-center col-span-12 pb-8">
       <ReuseTemplate />
     </div>
@@ -37,7 +37,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NavBarLink> Wedding </NavBarLink>
     </div>
 
-    <!-- Logo up xl -->
+    <!-- Logo for 3xl -->
     <div class="hidden 3xl:flex justify-center 3xl:col-span-4 pb-3">
       <ReuseTemplate />
     </div>

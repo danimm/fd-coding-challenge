@@ -3,7 +3,7 @@ defineOptions({ name: 'FooterComponent' })
 </script>
 
 <template>
-  <div class="container grid grid-cols-12 my-[50px] lg:mb-[245px] lg:mt-[225px]">
+  <footer class="container grid grid-cols-12 my-[50px] lg:mb-[245px] lg:mt-[225px]">
     <!-- Contact -->
     <div class="col-span-12 md:col-span-4 2xl:col-span-2 pb-8 md:pb-0">
       <picture>
@@ -55,15 +55,15 @@ defineOptions({ name: 'FooterComponent' })
       <div class="text-left">
         <h4 class="uppercase font-trade-bold font-normal mb-[45px]">Customer care</h4>
 
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Contact Us</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Track your order</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Returns</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">FAQ's</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Location Finder</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Service</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Product Care</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Gift Cards</a>
-        <a href="#" class="block no-underline text-[15pt] text-secondary">Sell your jewellery</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Contact Us</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Track your order</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Returns</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">FAQ's</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Location Finder</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Service</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Product Care</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Gift Cards</a>
+        <a href="" class="block no-underline text-[15pt] text-secondary">Sell your jewellery</a>
       </div>
     </div>
 
@@ -76,7 +76,7 @@ defineOptions({ name: 'FooterComponent' })
       >
       <a href="#" class="block no-underline text-[15pt] text-secondary">Magazine Download</a>
     </div>
-  </div>
+  </footer>
   <div class="container">
     <p class="font-trade text-[13pt] text-secondary mb-[73px]">© Copyright 2018 The Brand</p>
   </div>

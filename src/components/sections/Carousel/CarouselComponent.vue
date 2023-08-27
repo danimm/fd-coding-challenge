@@ -24,7 +24,7 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
 </script>
 
 <template>
-  <div class="bg-slider-bg">
+  <section class="bg-slider-bg">
     <div class="2xl:container h-[1500px] grid grid-cols-12 pb-[250px] 2xl:gap-[42px]">
       <div
         class="col-span-12 2xl:col-span-3 flex justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center py-8 2xl:py-0"
@@ -68,5 +68,5 @@ function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObser
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
