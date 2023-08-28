@@ -2,7 +2,7 @@
 
 This is the result of my coding challenge for the company Fire Digital.
 
-[Deployed version](https://fd-coding-challenge.netlify.app/watches)
+[Deployed version](https://fd-coding-challenge.netlify.app)
 
 [Source code](https://github.com/danimm/fd-coding-challenge)
 
