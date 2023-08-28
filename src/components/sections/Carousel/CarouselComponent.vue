@@ -16,11 +16,7 @@ const cards = computed(() => {
 })
 const lastIndexVisible = ref(0)
 
-//@ts-ignore
-function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
-  IntersectionObserverEntry
-]) {
-  console.log({ isVisible })
+function onIntersectionObserver([{ isIntersecting, target }]: [IntersectionObserverEntry]) {
   if (isIntersecting) {
     lastIndexVisible.value = cards.value.findIndex((element) => element.isSameNode(target)) || 0
   }
