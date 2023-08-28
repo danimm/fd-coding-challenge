@@ -1,8 +1,22 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import NavBarMobile from '@/components/core/navbar/NavBarMobile.vue'
+import { beforeEach, vi } from 'vitest'
+import router from '@/router/router'
+import { useRoute } from 'vue-router'
 
 describe('NavBarMobile', () => {
-  const wrapper = shallowMount(NavBarMobile)
+  vi.mock('vue-router', async () => {
+    const actual: any = await vi.importActual('vue-router')
+
+    return {
+      ...actual,
+      useRoute: vi.fn(() => ({ name: 'Watches' })),
+      useRouter: vi.fn()
+    }
+  })
+
+  vi.mocked(useRoute).mockReturnValue(router.currentRoute.value)
+  const wrapper = mount(NavBarMobile)
 
   it('Burger button renders properly', () => {
     expect((wrapper.vm as any).isOpen).toBe(false)
