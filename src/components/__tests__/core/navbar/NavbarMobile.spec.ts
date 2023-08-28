@@ -1,6 +1,5 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import NavBarMobile from '@/components/core/navbar/NavBarMobile.vue'
-import { beforeEach, vi } from 'vitest'
 import router from '@/router/router'
 import { useRoute } from 'vue-router'
 
