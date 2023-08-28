@@ -36,9 +36,9 @@ This is the result of my coding challenge for the company Fire Digital.
 
 ## Development
 
-During the test I have tried to follow good practices and I have left some comments to explain my intention when developing this functionality. You will find it with the code ```*INFO*```.
+During this challenge, I have tried to follow good practices and I have left some comments to explain my intention when developing this functionality. You will find it with the code ```*INFO*```.
 
-During the creation of components I usually follow an order (highly recommended) when structuring the files, but this may vary according to the criteria of the development team.
+On the creation of components I usually follow an order (highly recommended) when structuring the files, but this may vary according to the criteria of the development team.
 
 ## Vue files structure
 1. script tag (script setup whenever possible).
