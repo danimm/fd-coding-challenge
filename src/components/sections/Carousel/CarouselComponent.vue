@@ -23,7 +23,6 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
   console.log({ isVisible })
   if (isIntersecting) {
     lastIndexVisible.value = cards.value.findIndex((element) => element.isSameNode(target)) || 0
-    console.log({ lastIndexVisible: lastIndexVisible.value })
   }
 }
 </script>
@@ -34,7 +33,7 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
       class="2xl:container 2xl:h-[1500px] grid grid-cols-12 pb-[50px] md::pb-[250px] 2xl:gap-[42px]"
     >
       <div
-        class="col-span-12 2xl:col-span-3 flex sm:flex-row flex-col justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center sm:py-8 2xl:py-0"
+        class="col-span-12 2xl:col-span-3 flex sm:flex-row flex-col justify-center gap-8 2xl:gap-0 2xl:flex-col 2xl:justify-end items-center sm:py-8 2xl:py-0 2xl:mb-[250px]"
       >
         <div class="mt-8 sm:mt-0">
           <h3 class="font-trade-bold text-primary text-normal uppercase mb-[42px]">
@@ -53,7 +52,7 @@ function onIntersectionObserver([{ isVisible, isIntersecting, target }]: [
           <h3 class="uppercase text-[14pt] tracking-widest text-white font-trade-bold">Drag</h3>
         </div>
 
-        <div class="font-minion text-[20pt] text-secondary 2xl:pl-[82px]">
+        <div class="font-minion text-[20pt] text-secondary">
           <span class="text-white">{{ lastIndexVisible + 1 }}</span>
           <span>/ {{ relatedProducts.length }}</span>
         </div>
