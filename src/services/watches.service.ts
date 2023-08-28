@@ -6,7 +6,7 @@ export class WatchesService {
     try {
       return Promise.resolve(products as unknown as Product[])
     } catch (e) {
-      // TODO: Error handler
+      // Error handler
     }
 
     return null

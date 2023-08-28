@@ -7,7 +7,7 @@ export class PricesService {
       const filteredPrices = (prices as Price[]).filter(({ isActive }) => isActive)
       return Promise.resolve(filteredPrices)
     } catch (e) {
-      // TODO: Error handler
+      // Error handler
     }
 
     return null
